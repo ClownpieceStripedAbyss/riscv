@@ -3,7 +3,9 @@
 观测源码仓编译结果，发现Unsupported arch，于是翻找源码并且尝试加入linux/riscv64的支持，后报错依旧。
 
 在网络上搜索k8s编译"Unsupported arch"后，得到如下搜索结果
+
 http://liupeng0518.github.io/2019/05/15/k8s/deploy/%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/
+
 根据此篇教程进行源码的修补，报错更改为go not found
 
 问题十分简单，在安装golang时并没有加入环境变量。
@@ -48,3 +50,8 @@ https://gitee.com/jinjuhan/open-euler-notes/blob/main/resize-qcow2.md
 
 
 obs远端和本地同时报错：找不到cgo
+
+根据
+https://github.com/golang/go/issues/36641
+
+操作发现有cgo😓
