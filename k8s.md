@@ -55,3 +55,10 @@ obs远端和本地同时报错：找不到cgo
 https://github.com/golang/go/issues/36641
 
 操作发现有cgo😓
+
+尝试更改spec文件，添加
+`export CC="riscv64-linux-gnu-gcc"`
+
+无效
+
+尝试直接修改go env
