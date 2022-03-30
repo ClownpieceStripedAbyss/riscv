@@ -227,3 +227,77 @@ https://github.com/golang/go/issues/36641
 ```
 
 看来是某个内存操作影响了栈指针导致报错，具体情况明天再试试
+
+找了一大圈子，感觉错误原因十分模糊，于是查看go的版本，发现为1.15.5
+
+因为是go编译时报错，怀疑可能是版本过低部分功能并不稳定，尝试将其更新到1.18
+
+```
+# misc/cgo/testtls.test
+/root/goroot/pkg/tool/linux_riscv64/link: running gcc failed: exit status 1
+/usr/bin/ld: cannot find -latomic
+collect2: error: ld returned 1 exit status
+
+FAIL	misc/cgo/testtls [build failed]
+2022/03/30 14:23:37 Failed: exit status 2
+PASS
+ok  	misc/cgo/nocgo	0.119s
+PASS
+ok  	misc/cgo/nocgo	0.178s
+# misc/cgo/nocgo.test
+/root/goroot/pkg/tool/linux_riscv64/link: running gcc failed: exit status 1
+/usr/bin/ld: cannot find -latomic
+collect2: error: ld returned 1 exit status
+
+FAIL	misc/cgo/nocgo [build failed]
+2022/03/30 14:23:51 Failed: exit status 2
+skipped due to earlier error
+skipped due to earlier error
+skipped due to earlier error
+skipped due to earlier error
+skipped due to earlier error
+go tool dist: FAILED
+```
+
+结果编译报错找不到atomic包
+
+`$ yum install libatomic_ops -y`
+
+```
+Dependencies resolved.
+====================================================================================================
+ Package                     Architecture          Version                 Repository          Size
+====================================================================================================
+Installing:
+ libatomic_ops               riscv64               7.6.10-2                base                20 k
+
+Transaction Summary
+====================================================================================================
+Install  1 Package
+
+Total download size: 20 k
+Installed size: 32 k
+Is this ok [y/N]: y
+Downloading Packages:
+libatomic_ops-7.6.10-2.riscv64.rpm                                   39 kB/s |  20 kB     00:00
+----------------------------------------------------------------------------------------------------
+Total                                                                37 kB/s |  20 kB     00:00
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Preparing        :                                                                            1/1
+  Installing       : libatomic_ops-7.6.10-2.riscv64                                             1/1
+  Running scriptlet: libatomic_ops-7.6.10-2.riscv64                                             1/1
+/sbin/ldconfig: /lib64/lp64d/ld-linux-riscv64-lp64d.so.1 不是符号链接
+
+
+  Verifying        : libatomic_ops-7.6.10-2.riscv64                                             1/1
+
+Installed:
+  libatomic_ops-7.6.10-2.riscv64
+
+Complete!
+```
+
