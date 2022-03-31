@@ -505,3 +505,9 @@ go tool dist: FAILED
 
 obs构建libatomic_ops把我的golang删了，我又不缺那点内存😄
 
+在多次找不到libatomic后，我把go env中的CGO_ENABLE=1改成0
+
+编译成功，成功安装了最新的go1.18
+
+现在尝试使用go1.18对kubernetes进行编译
+
