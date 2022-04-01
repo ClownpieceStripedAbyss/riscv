@@ -511,3 +511,41 @@ obs构建libatomic_ops把我的golang删了，我又不缺那点内存😄
 
 现在尝试使用go1.18对kubernetes进行编译
 
+```
+[ 5364s] Generating digest list: /usr/lib/rpm/brp-digest-list /home/abuild/rpmbuild/BUILDROOT/kubernetes-1.20.2-7.oe1.riscv64
+[ 5365s] /usr/lib/rpm/brp-digest-list: line 32: gen_digest_lists: command not found
+[ 5367s] Provides: kubernetes-kubelet = 1.20.2-7.oe1 kubernetes-kubelet(riscv-64) = 1.20.2-7.oe1
+[ 5367s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[ 5367s] Requires: ld-linux-riscv64-lp64d.so.1()(64bit) ld-linux-riscv64-lp64d.so.1(GLIBC_2.27)(64bit) libc.so.6()(64bit) libc.so.6(GLIBC_2.27)(64bit) libdl.so.2()(64bit) libdl.so.2(GLIBC_2.27)(64bit) libpthread.so.0()(64bit) libpthread.so.0(GLIBC_2.27)(64bit) rtld(GNU_HASH)
+[ 5367s] Processing files: kubernetes-help-1.20.2-7.oe1.riscv64
+[ 5367s] Generating digest list: /usr/lib/rpm/brp-digest-list /home/abuild/rpmbuild/BUILDROOT/kubernetes-1.20.2-7.oe1.riscv64
+[ 5367s] /usr/lib/rpm/brp-digest-list: line 32: gen_digest_lists: command not found
+[ 5374s] Provides: kubernetes-help = 1.20.2-7.oe1 kubernetes-help(riscv-64) = 1.20.2-7.oe1
+[ 5374s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[ 5374s] Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/abuild/rpmbuild/BUILDROOT/kubernetes-1.20.2-7.oe1.riscv64
+[ 5381s] Wrote: /home/abuild/rpmbuild/SRPMS/kubernetes-1.20.2-7.oe1.src.rpm
+[ 5381s] Wrote: /home/abuild/rpmbuild/RPMS/riscv64/kubernetes-1.20.2-7.oe1.riscv64.rpm
+[ 5382s] Wrote: /home/abuild/rpmbuild/RPMS/riscv64/kubernetes-help-1.20.2-7.oe1.riscv64.rpm
+[ 5399s] Wrote: /home/abuild/rpmbuild/RPMS/riscv64/kubernetes-client-1.20.2-7.oe1.riscv64.rpm
+[ 5399s] Wrote: /home/abuild/rpmbuild/RPMS/riscv64/kubernetes-kubeadm-1.20.2-7.oe1.riscv64.rpm
+[ 5422s] Wrote: /home/abuild/rpmbuild/RPMS/riscv64/kubernetes-kubelet-1.20.2-7.oe1.riscv64.rpm
+[ 5437s] Wrote: /home/abuild/rpmbuild/RPMS/riscv64/kubernetes-node-1.20.2-7.oe1.riscv64.rpm
+[ 5488s] Wrote: /home/abuild/rpmbuild/RPMS/riscv64/kubernetes-master-1.20.2-7.oe1.riscv64.rpm
+[ 5488s] Executing(%clean): /bin/bash -e /var/tmp/rpm-tmp.WtoruY
+[ 5488s] + umask 022
+[ 5488s] + cd /home/abuild/rpmbuild/BUILD
+[ 5488s] + cd kubernetes-1.20.2
+[ 5488s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/kubernetes-1.20.2-7.oe1.riscv64
+[ 5489s] + RPM_EC=0
+[ 5489s] ++ jobs -p
+[ 5489s] + exit 0
+[ 5491s] ... checking for files with abuild user/group
+[ 5491s] 
+[ 5491s] openEuler-RISCV-rare finished "build kubernetes.spec" at Fri Apr  1 06:05:10 UTC 2022.
+[ 5491s] 
+```
+
+编译成功，由于mainline没有go1.18，故尝试使用1.17.3进行在线构建
+
+
+
