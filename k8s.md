@@ -547,5 +547,11 @@ obs构建libatomic_ops把我的golang删了，我又不缺那点内存😄
 
 编译成功，由于mainline没有go1.18，故尝试使用1.17.3进行在线构建
 
+好消息，1.17.3构建成功
 
+现在开始进行PR的合并，先去conf仓库添加包的支持
+
+fork包到本地仓库，加入自己的patch、spec和changelog
+
+将其导入到obs中进行构建，等待结果
 
