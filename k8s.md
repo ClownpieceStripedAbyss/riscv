@@ -1,16 +1,36 @@
 # RISC-V修包日志
-## k8s修复心路历程
-观测源码仓编译结果，发现Unsupported arch，于是翻找源码并且尝试加入linux/riscv64的支持，后报错依旧。
 
-在网络上搜索k8s编译"Unsupported arch"后，得到如下搜索结果
+## k8s修复心路历程
+
+### 1. 跟据Unsupported arch添加缺少的riscv64参数
+
+#### 1.1 定位问题
+
+观测源码仓obs编译结果，发现报错
+
+```
+Unsupported host arch. Must be x86_64, 386, arm, arm64, s390x or ppc64le.
+```
+
+于是翻找源码并且尝试加入linux/riscv64的支持
+
+在网络上搜索 "k8s 编译 Unsupported arch" 后，我得到如下搜索结果
 
 http://liupeng0518.github.io/2019/05/15/k8s/deploy/%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/
 
-根据此篇教程进行源码的修补，报错更改为go not found
+#### 1.2 加入环境变量
+
+根据此篇教程进行源码的修补，报错更改为
+
+```
+go not found
+```
 
 问题十分简单，在安装golang时并没有加入环境变量。
 
-`$ vim /var/tmp/build-root/standard_riscv64-riscv64/etc/profile`
+```
+$ vim /var/tmp/build-root/standard_riscv64-riscv64/etc/profile
+```
 
 加入go的PATH
 
@@ -21,19 +41,25 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 ```
 现在找得到go了
 
+### 2. 修改错误的编译参数
 
+#### 2.1 更改参数
 
 之后又出现报错
-`go build runtime/cgo: invalid flag in go:cgo_ldflag: -Wl,-z,relro,-z,now`
 
-尝试在spec中删除编译参数-Wl,-z,relro,-z,now
+```
+go build runtime/cgo: invalid flag in go:cgo_ldflag: -Wl,-z,relro,-z,now
+```
 
-编译器不再报错，开始正常编译
+在 `kubernetes.spec` 中删除编译参数 `-Wl,-z,relro,-z,now` 后，编译器不再报错，开始正常编译
 
-之后go compiler报错：`Undefined parseCPUInfo`
-在源码中寻找这一段，发现是因为cpuinfo的函数没有连接到parseCPUInfoRISCV的文件，故新建文件
+之后 `go compiler` 报错：`Undefined parseCPUInfo`
 
-`$ vim cpuinfo_riscv64.go`
+在源码中寻找这一段，发现是因为 `cpuinfo` 的函数没有连接到 `parseCPUInfoRISCV` 的文件
+
+```
+$ vim cpuinfo_riscv64.go
+```
 
 并引入函数
 
@@ -45,7 +71,7 @@ var parseCPUInfo = parseCPUInfoRISCV
 
 遂正常编译
 
-
+#### 2.2 硬盘扩容
 
 编译到一半报错硬盘空间不足，按照下面的教程实现了扩容qcow2
 
@@ -53,26 +79,29 @@ https://gitee.com/jinjuhan/open-euler-notes/blob/main/resize-qcow2.md
 
 方便好用
 
+#### 2.3 cgo 风波
 
+obs 远端和本地同时报错：找不到 cgo
 
-obs远端和本地同时报错：找不到cgo
+根据 https://github.com/golang/go/issues/36641
 
-根据
-https://github.com/golang/go/issues/36641
+操作发现有 cgo 😓
 
-操作发现有cgo😓
+尝试更改 `kubernetes.spec` 文件，添加
 
-尝试更改spec文件，添加
-
-`$ export CC="riscv64-linux-gnu-gcc"`
+```
+$ export CC="riscv64-linux-gnu-gcc"
+```
 
 无效
 
-尝试直接修改go env
+尝试直接修改 go env ，结果以失败告终
+
+#### 2.4 开摆
 
 好像cgo找不到并不是一个严重的问题，即使作为一个error，它依然允许程序继续运行下去，出现了新的错误信息
 
-```
+<details><pre>
 +++ [0329 14:25:17] Building go targets for linux/riscv64:
 [ 4595s]     cmd/gendocs
 [ 4595s]     cmd/genkubedocs
@@ -230,14 +259,13 @@ https://github.com/golang/go/issues/36641
 [ 4910s]        /usr/lib/golang/src/runtime/asm_riscv64.s:136 +0x7c fp=0x3f9008ffe0 sp=0x3f9008ffd8 pc=0x7de4c
 [ 4910s] runtime.mstart()
 [ 4910s]        /usr/lib/golang/src/runtime/proc.go:1116 fp=0x3f9008ffe0 sp=0x3f9008ffe0 pc=0x50128
-
-```
+</pre></details>
 
 看来是某个内存操作影响了栈指针导致报错，具体情况明天再试试
 
-在尝试添加`GODEBUG=gcstoptheworld=1`后，obs自动构建出现bug
+根据 https://github.com/golang/go/issues/29362 在尝试添加 `GODEBUG=gcstoptheworld=1` 后，obs 自动构建出现 bug
 
-```
+<details><pre>
 [ 4217s] # k8s.io/kubernetes/vendor/k8s.io/kubectl/pkg/cmd/clusterinfo
 [ 4217s] fatal error: workbuf is empty
 [ 4217s] 
@@ -465,12 +493,13 @@ https://github.com/golang/go/issues/36641
 [ 4237s]     Bad exit status from /var/tmp/rpm-tmp.Cig2Xx (%build)
 [ 4237s] 
 [ 4237s] oe-RISCV-worker54-home failed "build kubernetes.spec" at Wed Mar 30 09:07:58 UTC 2022.
-```
+</pre></details>
 
-## 更新golang
-找了一大圈子，感觉错误原因十分模糊，于是查看go的版本，发现为1.15.5
+### 3 更新 golang
 
-因为是go编译时报错，怀疑可能是版本过低部分功能并不稳定，尝试将其更新到1.18
+找了一大圈子，感觉错误原因十分模糊，于是查看 go 的版本，发现为 1.15.5
+
+因为是 go 编译时报错，怀疑可能是版本过低部分功能并不稳定，尝试将其更新到 1.18
 
 ```
 # misc/cgo/testtls.test
@@ -492,20 +521,16 @@ collect2: error: ld returned 1 exit status
 FAIL	misc/cgo/nocgo [build failed]
 2022/03/30 14:23:51 Failed: exit status 2
 skipped due to earlier error
-skipped due to earlier error
-skipped due to earlier error
-skipped due to earlier error
-skipped due to earlier error
 go tool dist: FAILED
 ```
 
-结果编译报错找不到atomic包
+结果编译报错找不到 `atomic` 包
 
-真的服了，然后我一方面通过obs在编译环境上安装，一方面在本地环境安装，防止出错
+真的服了，然后我一方面通过 obs 在编译环境上安装，一方面在本地环境安装，防止出错
 
-obs构建libatomic_ops把我的golang删了，我又不缺那点内存😄
+obs构建 `libatomic_ops` 把我的 golang 删了，我又不缺那点内存😄
 
-在多次找不到libatomic后，我把go env中的CGO_ENABLE=1改成0
+在多次找不到 `libatomic` 后，我把 go env 中的 `CGO_ENABLE=1` 改成0
 
 编译成功，成功安装了最新的go1.18
 
