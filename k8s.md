@@ -570,13 +570,15 @@ obs构建 `libatomic_ops` 把我的 golang 删了，我又不缺那点内存😄
 [ 5491s] 
 ```
 
-编译成功，由于mainline没有go1.18，故尝试使用1.17.3进行在线构建
+编译成功，由于 Mainline 没有 go1.18，故尝试使用 1.17.3 进行在线构建
 
-好消息，1.17.3构建成功
+好消息，1.17.3 构建成功
 
-现在开始进行PR的合并，先去conf仓库添加包的支持
+### 4. 向上游提交
+现在开始进行PR的合并，先去[ conf ](https://gitee.com/openeuler/RISC-V/blob/master/configuration/riscv_fork_list.yaml)仓库添加包的支持
 
-fork包到本地仓库，加入自己的patch、spec和changelog
+fork 包到本地仓库，加入自己的 patch、spec 和 changelog
 
-将其导入到obs中进行构建，等待结果
-
+将其导入到 obs 中进行构建，构建成功后就可以申请PR的合并
+  
+合并后
