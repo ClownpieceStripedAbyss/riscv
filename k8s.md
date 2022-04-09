@@ -575,10 +575,15 @@ obs构建 `libatomic_ops` 把我的 golang 删了，我又不缺那点内存😄
 好消息，1.17.3 构建成功
 
 ### 4. 向上游提交
+
 现在开始进行PR的合并，先去[ conf ](https://gitee.com/openeuler/RISC-V/blob/master/configuration/riscv_fork_list.yaml)仓库添加包的支持
 
 fork 包到本地仓库，加入自己的 patch、spec 和 changelog
 
 将其导入到 obs 中进行构建，构建成功后就可以申请PR的合并
   
-合并后
+合并后将 `_service` 的 git 仓库指向[官方仓](https://gitee.com/src-openeuler)/[oe-rv中间仓](https://gitee.com/openeuler-risc-v)，触发obs的自动构建
+
+自动构建成功后，就能通过obs提交了
+
+至此，修包流程结束。
