@@ -26,4 +26,4 @@ Ignore: libjson-c.so.5(JSONC_0.14)(64bit)
 
 ### 4.个人项目构建完成
 
-修复十分顺利，仅仅加入 `json-c` 就修复成功了
+修复十分顺利，仅仅在 `rubygem-puma.spec` 中加入 `json-c` 就修复成功了
