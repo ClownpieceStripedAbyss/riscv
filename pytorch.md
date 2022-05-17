@@ -4,7 +4,7 @@
 
 ### 1. 分析 obs 构建错误信息
 
-```
+```log
 [ 2505s] [ 22%] Performing download step (git clone) for 'psimd'
 [ 2528s] Cloning into 'psimd'...
 [ 2539s] fatal: unable to access 'https://github.com/Maratyszcza/psimd.git/': Could not resolve host: github.com
@@ -20,9 +20,9 @@
 
 带着这个疑问，我尝试 clone 仓库，并且运行 `updateSource.sh`
 
-运行到一半我又意识到，既然都 update 了，为什么不贯彻到底呢
+运行到一半我又意识到，既然都 update 了，为什么不贯彻到底呢？
 
-于是我去查询了 pytorch 最新的版本，并将源码包更新到了1.11.0
+于是我去查询了 pytorch 最新的版本，并将源码包更新到了1.11.0。
 
 ### 3. 准备第一次编译和修复
 
@@ -36,13 +36,13 @@
 ModuleNotFoundError: No module named 'typing_extensions'
 ```
 
-于是在 `BuildRequires` 中加入 `python-typing-extensions`
+依赖问题，在 `BuildRequires` 中加入 `python-typing-extensions` 即可解决。
 
 ### 4. 为 `breakpad` 添加 `riscv64` 支持
 
 #### 4.1 搭建修复环境
 
-在编译环境搭建完整后，我对源码修修补补，多次尝试编译运行，得到了许多错误信息
+在编译环境搭建完整后，我对源码修修补补，多次尝试编译运行，得到了许多错误信息：
 
 ```
 third_party/breakpad/src/common/linux/memory_mapped_file.cc:74:7: error: ‘sys_fstat64’ was not declared in this scope
@@ -58,21 +58,21 @@ third_party/breakpad/src/common/linux/memory_mapped_file.cc:91:16: error: ‘sys
 
 #### 4.2 配置 CLion
 
-设置 Toolchains
+设置 Toolchains：
 
-File -> Settings -> Build, Execution, Deployment -> Toolchains
+**File -> Settings -> Build, Execution, Deployment -> Toolchains**
 
-选择 **+** 号添加 Remote Host ，填写 openEuler 的 ssh 信息，设置一下工具的绝对路径即可。
+选择 **+** 号添加 **Remote Host** ，填写 openEuler 的 ssh 信息，设置一下工具的绝对路径即可。
 
-设置 CMake
+设置 **CMake**：
 
-File -> Settings -> Build, Execution, Deployment -> CMake
+**File -> Settings -> Build, Execution, Deployment -> CMake**
 
-将 Toolchain 设置为刚才新增的 Remote Host ，然后就可以 Build 了
+将 **Toolchain** 设置为刚才新增的 **Remote Host** ，然后就可以 Build 了。
 
-#### 4.3 设置 openEuler 为 user-mode 
+#### 4.3 以 user-mode 启动 openEuler 
 
-由于项目过于庞大，所以使用 qemu-user 加速编译，为此，我写了一个脚本
+由于项目过于庞大，所以使用 qemu-user 降低转译消耗，为此，我写了一个脚本。
 
 ```bash
 #!/usr/bin/env bash
@@ -97,15 +97,37 @@ sudo umount -f -l mnt/proc
 sudo umount -f -l mnt
 sudo qemu-nbd --disconnect /dev/nbd0
 sudo /usr/sbin/rmmod nbd
+# if you meet any Error, just restart your host machine
 ```
 
-启动 qumu-user 后，需要手动开启 sshd 服务，手动配置 dns 服务器
+启动 qumu-user 后，需要手动开启 sshd 服务，手动配置 dns 服务器。
 
-#### 4.4 参考 aarch64 代码实现，为 breakpad 添加 riscv 支持
+#### 4.4 为 breakpad 添加 RISC-V 支持
 
-它们的部分内容比较近似，其代码也可直接复用
+首先需要定义 RISC-V 内部寄存器，以及 `kernel_stat` 的结构。
 
-由于操作系统中 user 权限的应用并没有权限访问 pc 寄存器，并且 linux 并没有 auipc 的接口，所以部分寄存器的 dump 只能不了了之，等待上游更新。
+根据 [RISC-V Calling](https://riscv.org/wp-content/uploads/2015/01/riscv-calling.pdf) 的 `Table 18.2` 改写 `RawContextCPU` 。
+
+根据 [Linux源码](https://github.com/torvalds/linux/blob/42226c989789d8da4af1de0c31070c96726d990c/arch/riscv/include/uapi/asm/ucontext.h#L13-L32) 在 QEMU 环境中利用 `offest_of()` 计算 `uc_mcontext` 的 `offset` 。
+
+至于每个寄存器的偏移量，可以根据内存布局得出，[按图索骥](https://github.com/torvalds/linux/blob/42226c989789d8da4af1de0c31070c96726d990c/arch/riscv/include/uapi/asm/ptrace.h#L19)即可（也可利用脚本生成）。
+
+`aarch64` 和 `riscv` 架构上有接近的部分，其代码也可直接复用。
+
+在某些 `#elif !defined(__ARM_EABI__) && !defined(__mips__)` 的预编译定义中，可以直接尝试在最后加入 `&& !defined(__riscv)`。
+
+在 `linux_ptrace_dumper.cc` 中，也可以直接复用aarch64的代码，如：
+```c
+my_memcpy(&stack_pointer, &info->regs.sp, sizeof(info->regs.sp));
+```
+
+在 `linux_syscall_support.h` 中，我也参考了大部分aarch64的代码：
+```c
+#undef LSS_REG
+#define LSS_REG(r,a) register int64_t __r##r __asm__("a"#r) = (int64_t)a
+```
+
+由于操作系统中 user 权限的应用并没有权限访问 pc 寄存器，并且 Linux 并没有 AUIPC 指令的接口，所以部分寄存器的 dump 只能不了了之（目前被设置为 `nullptr` ），等待 Linux 上游更新。
 
 ### 5. 追踪后续上游项目进展
 
