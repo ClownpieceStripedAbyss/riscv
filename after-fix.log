@@ -1,0 +1,1464 @@
+[    0s] Memory limit set to 43204524KB
+[    0s] Using BUILD_ROOT=/var/cache/obs/worker/root_10
+[    0s] Using BUILD_ARCH=riscv64
+[    0s] Doing docker build
+[    0s] 
+[    0s] 
+[    0s] oerv-obs-worker-08 started "build _service:extract_file:atune.spec" at Mon May 23 06:50:31 UTC 2022.
+[    0s] 
+[    0s] Building A-Tune for project 'home:Emmmer:branches:Factory:RISC-V' repository '22.03' arch 'riscv64' srcmd5 'b716e3da2e9818abb63099ac785984dc'
+[    0s] 
+[    0s] processing recipe /var/cache/obs/worker/root_10/.build-srcdir/_service:extract_file:atune.spec ...
+[    0s] running changelog2spec --target rpm --file /var/cache/obs/worker/root_10/.build-srcdir/_service:extract_file:atune.spec
+[    0s] init_buildsystem --configdir /var/run/obs/worker/10/build/configs --cachedir /var/cache/build --prepare --clean --rpmlist /var/cache/obs/worker/root_10/.build.rpmlist /var/cache/obs/worker/root_10/.build-srcdir/_service:extract_file:atune.spec build ...
+[    1s] cycle: bash -> coreutils
+[    1s]   breaking dependency coreutils -> bash
+[    1s] cycle: bash -> coreutils -> info
+[    1s]   breaking dependency coreutils -> info
+[    1s] cycle: filesystem -> bash -> coreutils -> glibc
+[    1s]   breaking dependency filesystem -> bash
+[    1s] cycle: filesystem -> coreutils -> glibc
+[    1s]   breaking dependency filesystem -> coreutils
+[    1s] cycle: bash -> coreutils -> libcap
+[    1s]   breaking dependency coreutils -> libcap
+[    1s] cycle: perl-Carp -> perl-libs
+[    1s]   breaking dependency perl-libs -> perl-Carp
+[    1s] cycle: perl-libs -> perl-Exporter
+[    1s]   breaking dependency perl-libs -> perl-Exporter
+[    1s] cycle: perl-Carp -> perl-Exporter
+[    1s]   breaking dependency perl-Exporter -> perl-Carp
+[    1s] cycle: libcap -> pam -> audit -> systemd
+[    1s]   breaking dependency systemd -> libcap
+[    1s] cycle: systemd -> cryptsetup -> device-mapper
+[    1s]   breaking dependency systemd -> cryptsetup
+[    1s] cycle: pam -> audit -> systemd
+[    1s]   breaking dependency systemd -> pam
+[    1s] cycle: nss-util -> nss
+[    1s]   breaking dependency nss -> nss-util
+[    1s] cycle: nss-softokn -> nss-util -> nss
+[    1s]   breaking dependency nss -> nss-softokn
+[    1s] cycle: perl-constant -> perl -> perl-Getopt-Long
+[    1s]   breaking dependency perl -> perl-Getopt-Long
+[    1s] cycle: perl-constant -> perl
+[    1s]   breaking dependency perl -> perl-constant
+[    1s] cycle: perl -> perl-Data-Dumper
+[    1s]   breaking dependency perl-Data-Dumper -> perl
+[    1s] cycle: perl-constant -> perl -> perl-Data-Dumper
+[    1s]   breaking dependency perl -> perl-Data-Dumper
+[    1s] cycle: rpm -> rpm-libs
+[    1s]   breaking dependency rpm -> rpm-libs
+[    1s] [1/86] preinstalling filesystem...
+[    1s] [2/86] preinstalling dbus...
+[    1s] [3/86] preinstalling glibc...
+[    1s] [4/86] preinstalling libffi-devel...
+[    1s] [5/86] preinstalling libgcc...
+[    1s] [6/86] preinstalling diffutils...
+[    1s] [7/86] preinstalling libcap-ng...
+[    1s] [8/86] preinstalling libgpg-error...
+[    1s] [9/86] preinstalling libpcap...
+[    1s] [10/86] preinstalling libsmartcols...
+[    1s] [11/86] preinstalling libuuid...
+[    1s] [12/86] preinstalling libxcrypt...
+[    1s] [13/86] preinstalling lz4...
+[    1s] [14/86] preinstalling m4...
+[    1s] [15/86] preinstalling nspr...
+[    1s] [16/86] preinstalling xz-libs...
+[    2s] [17/86] preinstalling attr...
+[    2s] [18/86] preinstalling libdb...
+[    2s] [19/86] preinstalling ncurses-libs...
+[    2s] [20/86] preinstalling zlib...
+[    2s] [21/86] preinstalling zstd...
+[    2s] [22/86] preinstalling audit-libs...
+[    2s] [23/86] preinstalling file...
+[    2s] [24/86] preinstalling iptables-libs...
+[    2s] [25/86] preinstalling libacl...
+[    2s] [26/86] preinstalling libgcrypt...
+[    2s] [27/86] preinstalling openssl-libs...
+[    2s] [28/86] preinstalling readline...
+[    2s] [29/86] preinstalling cmake...
+[    3s] [30/86] preinstalling ncurses...
+[    3s] [31/86] preinstalling perl-libs...
+[    3s] [32/86] preinstalling perl-Exporter...
+[    3s] [33/86] preinstalling pcre...
+[    3s] [34/86] preinstalling pcre2...
+[    4s] [35/86] preinstalling acl...
+[    4s] [36/86] preinstalling sqlite...
+[    4s] [37/86] preinstalling libselinux...
+[    4s] [38/86] preinstalling perl-Carp...
+[    4s] [39/86] preinstalling perl-Digest-MD5...
+[    4s] [40/86] preinstalling sed...
+[    4s] [41/86] preinstalling coreutils...
+[    4s] [42/86] preinstalling bash...
+[    4s] [43/86] preinstalling dnf...
+[    4s] [44/86] preinstalling bzip2...
+[    4s] [45/86] preinstalling hostname...
+[    4s] [46/86] preinstalling popt...
+[    4s] [47/86] preinstalling elfutils...
+[    4s] [48/86] preinstalling grep...
+[    5s] [49/86] preinstalling libblkid...
+[    5s] [50/86] preinstalling tar...
+[    5s] [51/86] preinstalling info...
+[    5s] [52/86] preinstalling iproute...
+[    5s] [53/86] preinstalling libgcrypt-devel...
+[    5s] [54/86] preinstalling lua...
+[    5s] [55/86] preinstalling nss...
+[    5s] [56/86] preinstalling chkconfig...
+[    5s] [57/86] preinstalling copy-jdk-configs...
+[    5s] [58/86] preinstalling libfdisk...
+[    5s] [59/86] preinstalling libmount...
+[    5s] [60/86] preinstalling libsemanage...
+[    5s] [61/86] preinstalling nss-util...
+[    5s] [62/86] preinstalling xz...
+[    5s] [63/86] preinstalling findutils...
+[    5s] [64/86] preinstalling systemd-libs...
+[    5s] [65/86] preinstalling dbus-libs...
+[    5s] [66/86] preinstalling nss-softokn...
+[    6s] [67/86] preinstalling glib2...
+[    6s] [68/86] preinstalling systemd...
+[    6s] [69/86] preinstalling gobject-introspection...
+[    6s] [70/86] preinstalling net-tools...
+[    6s] [71/86] preinstalling audit...
+[    6s] [72/86] preinstalling pam...
+[    6s] [73/86] preinstalling libcap...
+[    6s] [74/86] preinstalling util-linux...
+[    6s] [75/86] preinstalling iputils...
+[    7s] [76/86] preinstalling device-mapper...
+[    7s] [77/86] preinstalling rpm...
+[    7s] [78/86] preinstalling cryptsetup...
+[    7s] [79/86] preinstalling openEuler-rpm-config...
+[    7s] [80/86] preinstalling lvm2...
+[    7s] [81/86] preinstalling rpm-libs...
+[    7s] [82/86] preinstalling perl...
+[    7s] [83/86] preinstalling perl-constant...
+[    7s] [84/86] preinstalling openssl...
+[    7s] [85/86] preinstalling perl-Getopt-Long...
+[    7s] [86/86] preinstalling perl-Data-Dumper...
+[    7s] 
+[    7s] copying packages...
+[    8s] reordering...cycle: coreutils -> bash
+[    8s]   breaking dependency coreutils -> bash
+[    8s] cycle: coreutils -> info
+[    8s]   breaking dependency coreutils -> info
+[    8s] cycle: glibc -> basesystem -> filesystem -> coreutils -> gmp
+[    8s]   breaking dependency filesystem -> coreutils
+[    8s] cycle: glibc -> basesystem -> filesystem -> bash -> coreutils -> gmp
+[    8s]   breaking dependency filesystem -> bash
+[    8s] cycle: glibc -> basesystem -> filesystem -> setup -> openEuler-release -> bc -> info -> coreutils -> gmp
+[    8s]   breaking dependency filesystem -> setup
+[    8s] cycle: glibc -> basesystem -> setup -> openEuler-release -> bc -> info -> coreutils -> gmp
+[    8s]   breaking dependency coreutils -> gmp
+[    8s] cycle: glibc -> basesystem -> setup -> openEuler-release -> bc -> info -> coreutils
+[    8s]   breaking dependency coreutils -> glibc
+[    8s] cycle: glibc -> basesystem -> setup -> openEuler-release -> bc -> info -> coreutils -> libacl
+[    8s]   breaking dependency coreutils -> libacl
+[    8s] cycle: glibc -> basesystem -> setup -> openEuler-release -> bc -> info -> coreutils -> attr
+[    8s]   breaking dependency coreutils -> attr
+[    8s] cycle: coreutils -> libcap
+[    8s]   breaking dependency coreutils -> libcap
+[    8s] cycle: glibc -> basesystem -> setup -> openEuler-release -> bc -> info -> coreutils -> openssl-libs
+[    8s]   breaking dependency info -> coreutils
+[    8s] cycle: glibc -> basesystem -> setup -> openEuler-release -> bc -> info -> bash -> coreutils -> openssl-libs
+[    8s]   breaking dependency openssl-libs -> glibc
+[    8s] cycle: coreutils -> openssl-libs -> ca-certificates
+[    8s]   breaking dependency ca-certificates -> coreutils
+[    8s] cycle: bash -> coreutils -> openssl-libs -> ca-certificates
+[    8s]   breaking dependency ca-certificates -> bash
+[    8s] cycle: coreutils -> openssl-libs -> ca-certificates -> grep
+[    8s]   breaking dependency grep -> coreutils
+[    8s] cycle: bash -> coreutils -> openssl-libs -> ca-certificates -> grep
+[    8s]   breaking dependency coreutils -> openssl-libs
+[    8s] cycle: glibc -> basesystem -> setup -> openEuler-release -> bc -> info -> bash -> coreutils -> libselinux
+[    8s]   breaking dependency info -> bash
+[    8s] cycle: glibc -> basesystem -> setup -> openEuler-release -> bc -> info
+[    8s]   breaking dependency bc -> info
+[    8s] cycle: glibc -> basesystem -> setup -> openEuler-release -> bc
+[    8s]   breaking dependency glibc -> basesystem
+[    8s] cycle: glibc -> glibc-common -> bash -> coreutils -> libselinux
+[    8s]   breaking dependency glibc-common -> bash
+[    8s] cycle: glibc -> glibc-common -> coreutils -> libselinux
+[    8s]   breaking dependency libselinux -> glibc
+[    8s] cycle: glibc -> glibc-common -> coreutils -> libselinux -> pcre2
+[    8s]   breaking dependency pcre2 -> glibc
+[    8s] cycle: glibc -> glibc-common -> coreutils -> libselinux -> pcre2 -> readline
+[    8s]   breaking dependency readline -> glibc
+[    8s] cycle: glibc -> glibc-common -> coreutils -> libselinux -> pcre2 -> readline -> ncurses-libs
+[    8s]   breaking dependency glibc-common -> coreutils
+[    8s] cycle: glibc -> glibc-common
+[    8s]   breaking dependency glibc-common -> glibc
+[    8s] cycle: glibc -> glibc-common -> libselinux -> pcre2 -> readline -> ncurses-libs
+[    8s]   breaking dependency readline -> ncurses-libs
+[    8s] cycle: libselinux -> libsepol -> coreutils
+[    8s]   breaking dependency libsepol -> coreutils
+[    8s] cycle: libselinux -> libsepol -> bash -> coreutils
+[    8s]   breaking dependency bash -> coreutils
+[    8s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash
+[    8s]   breaking dependency bash -> glibc
+[    8s] cycle: glibc -> glibc-common -> libselinux -> libsepol -> bash -> ncurses-libs
+[    8s]   breaking dependency ncurses-libs -> glibc
+[    8s] cycle: glibc -> glibc-common -> libselinux -> libsepol
+[    8s]   breaking dependency libsepol -> glibc
+[    8s] cycle: crypto-policies -> python3 -> openssl-libs
+[    8s]   breaking dependency python3 -> openssl-libs
+[    8s] cycle: krb5-libs -> crypto-policies -> python3 -> libnsl2 -> libtirpc
+[    8s]   breaking dependency python3 -> libnsl2
+[    8s] cycle: krb5-libs -> crypto-policies -> python3 -> libtirpc
+[    8s]   breaking dependency python3 -> libtirpc
+[    8s] cycle: glib2 -> gamin
+[    8s]   breaking dependency glib2 -> gamin
+[    8s] cycle: systemd -> libcap -> pam -> audit
+[    8s]   breaking dependency systemd -> libcap
+[    8s] cycle: systemd -> cryptsetup -> device-mapper
+[    8s]   breaking dependency systemd -> cryptsetup
+[    8s] cycle: systemd -> pam -> audit
+[    8s]   breaking dependency systemd -> pam
+[    8s] cycle: systemd -> shadow -> pam -> audit
+[    8s]   breaking dependency systemd -> shadow
+[    8s] cycle: pam -> libpwquality
+[    8s]   breaking dependency pam -> libpwquality
+[    8s] cycle: rpm -> rpm-libs
+[    8s]   breaking dependency rpm -> rpm-libs
+[    8s] cycle: glibc-devel -> libxcrypt-devel
+[    8s]   breaking dependency glibc-devel -> libxcrypt-devel
+[    8s] cycle: perl-libs -> perl-Carp
+[    8s]   breaking dependency perl-libs -> perl-Carp
+[    8s] cycle: perl-libs -> perl-Exporter
+[    8s]   breaking dependency perl-libs -> perl-Exporter
+[    8s] cycle: perl-Carp -> perl-Exporter
+[    8s]   breaking dependency perl-Exporter -> perl-Carp
+[    8s] cycle: perl -> perl-PathTools
+[    8s]   breaking dependency perl -> perl-PathTools
+[    8s] cycle: perl -> perl-ExtUtils-MakeMaker
+[    8s]   breaking dependency perl -> perl-ExtUtils-MakeMaker
+[    8s] cycle: perl -> perl-File-Path -> perl-PathTools
+[    8s]   breaking dependency perl -> perl-File-Path
+[    8s] cycle: perl -> perl-Getopt-Long -> perl-Pod-Usage
+[    8s]   breaking dependency perl -> perl-Getopt-Long
+[    8s] cycle: perl -> perl-Locale-Maketext
+[    8s]   breaking dependency perl -> perl-Locale-Maketext
+[    8s] cycle: perl -> perl-Pod-Simple
+[    8s]   breaking dependency perl -> perl-Pod-Simple
+[    8s] cycle: perl -> perl-Socket
+[    8s]   breaking dependency perl -> perl-Socket
+[    8s] cycle: perl -> perl-Storable
+[    8s]   breaking dependency perl -> perl-Storable
+[    8s] cycle: perl -> perl-Text-Tabs+Wrap
+[    8s]   breaking dependency perl -> perl-Text-Tabs+Wrap
+[    8s] cycle: perl -> perl-Time-Local -> perl-constant
+[    8s]   breaking dependency perl -> perl-Time-Local
+[    8s] cycle: perl -> perl-constant
+[    8s]   breaking dependency perl -> perl-constant
+[    8s] cycle: perl -> perl-threads
+[    8s]   breaking dependency perl -> perl-threads
+[    8s] cycle: perl -> perl-threads-shared
+[    8s]   breaking dependency perl -> perl-threads-shared
+[    8s] cycle: perl -> perl-Archive-Tar
+[    8s]   breaking dependency perl -> perl-Archive-Tar
+[    8s] cycle: perl -> perl-B-Debug
+[    8s]   breaking dependency perl -> perl-B-Debug
+[    8s] cycle: perl -> perl-CPAN-Meta -> perl-CPAN-Meta-Requirements
+[    8s]   breaking dependency perl -> perl-CPAN-Meta
+[    8s] cycle: perl -> perl-CPAN-Meta-Requirements
+[    8s]   breaking dependency perl -> perl-CPAN-Meta-Requirements
+[    8s] cycle: perl -> perl-CPAN-Meta-YAML
+[    8s]   breaking dependency perl -> perl-CPAN-Meta-YAML
+[    8s] cycle: perl -> perl-Compress-Raw-Bzip2
+[    8s]   breaking dependency perl -> perl-Compress-Raw-Bzip2
+[    8s] cycle: perl -> perl-Compress-Raw-Zlib
+[    8s]   breaking dependency perl -> perl-Compress-Raw-Zlib
+[    8s] cycle: perl -> perl-Config-Perl-V
+[    8s]   breaking dependency perl -> perl-Config-Perl-V
+[    8s] cycle: perl -> perl-DB_File
+[    8s]   breaking dependency perl -> perl-DB_File
+[    8s] cycle: perl -> perl-Data-Dumper
+[    8s]   breaking dependency perl -> perl-Data-Dumper
+[    8s] cycle: perl -> perl-Devel-PPPort
+[    8s]   breaking dependency perl -> perl-Devel-PPPort
+[    8s] cycle: perl -> perl-Digest -> perl-MIME-Base64
+[    8s]   breaking dependency perl -> perl-Digest
+[    8s] cycle: perl -> perl-Digest-MD5 -> perl-Digest -> perl-MIME-Base64
+[    8s]   breaking dependency perl -> perl-Digest-MD5
+[    8s] cycle: perl -> perl-Digest-SHA
+[    8s]   breaking dependency perl -> perl-Digest-SHA
+[    8s] cycle: perl -> perl-Encode
+[    8s]   breaking dependency perl -> perl-Encode
+[    8s] cycle: perl -> perl-Env
+[    8s]   breaking dependency perl -> perl-Env
+[    8s] cycle: perl -> perl-ExtUtils-Command
+[    8s]   breaking dependency perl -> perl-ExtUtils-Command
+[    8s] cycle: perl -> perl-ExtUtils-Install
+[    8s]   breaking dependency perl -> perl-ExtUtils-Install
+[    8s] cycle: perl -> perl-ExtUtils-Manifest
+[    8s]   breaking dependency perl -> perl-ExtUtils-Manifest
+[    8s] cycle: perl -> perl-ExtUtils-ParseXS
+[    8s]   breaking dependency perl -> perl-ExtUtils-ParseXS
+[    8s] cycle: perl -> perl-File-Fetch -> perl-PathTools
+[    8s]   breaking dependency perl -> perl-File-Fetch
+[    8s] cycle: perl -> perl-File-Temp -> perl-PathTools
+[    8s]   breaking dependency perl -> perl-File-Temp
+[    8s] cycle: perl -> perl-Filter
+[    8s]   breaking dependency perl -> perl-Filter
+[    8s] cycle: perl -> perl-Filter-Simple -> perl-Filter
+[    8s]   breaking dependency perl -> perl-Filter-Simple
+[    8s] cycle: perl -> perl-HTTP-Tiny
+[    8s]   breaking dependency perl -> perl-HTTP-Tiny
+[    8s] cycle: perl -> perl-IO-Compress
+[    8s]   breaking dependency perl -> perl-IO-Compress
+[    8s] cycle: perl -> perl-IO-Socket-IP
+[    8s]   breaking dependency perl -> perl-IO-Socket-IP
+[    8s] cycle: perl -> perl-IPC-Cmd -> perl-ExtUtils-MakeMaker
+[    8s]   breaking dependency perl -> perl-IPC-Cmd
+[    8s] cycle: perl -> perl-IPC-SysV
+[    8s]   breaking dependency perl -> perl-IPC-SysV
+[    8s] cycle: perl -> perl-JSON-PP
+[    8s]   breaking dependency perl -> perl-JSON-PP
+[    8s] cycle: perl -> perl-Locale-Codes -> perl-constant
+[    8s]   breaking dependency perl -> perl-Locale-Codes
+[    8s] cycle: perl -> perl-MIME-Base64
+[    8s]   breaking dependency perl -> perl-MIME-Base64
+[    8s] cycle: perl -> perl-Math-BigInt
+[    8s]   breaking dependency perl -> perl-Math-BigInt
+[    8s] cycle: perl -> perl-Math-BigInt-FastCalc -> perl-Math-BigInt
+[    8s]   breaking dependency perl -> perl-Math-BigInt-FastCalc
+[    8s] cycle: perl -> perl-Math-BigRat -> perl-Math-BigInt
+[    8s]   breaking dependency perl -> perl-Math-BigRat
+[    8s] cycle: perl -> perl-Module-CoreList
+[    8s]   breaking dependency perl -> perl-Module-CoreList
+[    8s] cycle: perl -> perl-Module-Load -> perl-PathTools
+[    8s]   breaking dependency perl -> perl-Module-Load
+[    8s] cycle: perl -> perl-Module-Load-Conditional
+[    8s]   breaking dependency perl -> perl-Module-Load-Conditional
+[    8s] cycle: perl -> perl-Module-Metadata
+[    8s]   breaking dependency perl -> perl-Module-Metadata
+[    8s] cycle: perl -> perl-Params-Check
+[    8s]   breaking dependency perl -> perl-Params-Check
+[    8s] cycle: perl -> perl-PerlIO-via-QuotedPrint -> perl-MIME-Base64
+[    8s]   breaking dependency perl -> perl-PerlIO-via-QuotedPrint
+[    8s] cycle: perl -> perl-Pod-Checker
+[    8s]   breaking dependency perl -> perl-Pod-Checker
+[    8s] cycle: perl -> perl-Pod-Escapes
+[    8s]   breaking dependency perl -> perl-Pod-Escapes
+[    8s] cycle: perl -> perl-Pod-Parser
+[    8s]   breaking dependency perl -> perl-Pod-Parser
+[    8s] cycle: perl -> perl-Pod-Perldoc
+[    8s]   breaking dependency perl -> perl-Pod-Perldoc
+[    8s] cycle: perl -> perl-Pod-Usage
+[    8s]   breaking dependency perl -> perl-Pod-Usage
+[    8s] cycle: perl -> perl-Sys-Syslog
+[    8s]   breaking dependency perl -> perl-Sys-Syslog
+[    8s] cycle: perl -> perl-Term-Cap
+[    8s]   breaking dependency perl -> perl-Term-Cap
+[    8s] cycle: perl -> perl-Test-Harness
+[    8s]   breaking dependency perl -> perl-Test-Harness
+[    8s] cycle: perl -> perl-Test-Simple
+[    8s]   breaking dependency perl -> perl-Test-Simple
+[    8s] cycle: perl -> perl-Text-Balanced
+[    8s]   breaking dependency perl -> perl-Text-Balanced
+[    8s] cycle: perl -> perl-Thread-Queue -> perl-threads-shared
+[    8s]   breaking dependency perl -> perl-Thread-Queue
+[    8s] cycle: perl -> perl-Unicode-Collate -> perl-PathTools
+[    8s]   breaking dependency perl -> perl-Unicode-Collate
+[    8s] cycle: perl -> perl-autodie
+[    8s]   breaking dependency perl -> perl-autodie
+[    8s] cycle: perl -> perl-bignum -> perl-Math-BigInt
+[    8s]   breaking dependency perl -> perl-bignum
+[    8s] cycle: perl -> perl-devel
+[    8s]   breaking dependency perl -> perl-devel
+[    8s] cycle: perl -> perl-Encode-devel
+[    8s]   breaking dependency perl -> perl-Encode-devel
+[    8s] cycle: perl -> perl-experimental
+[    8s]   breaking dependency perl -> perl-experimental
+[    8s] cycle: perl -> perl-libnet -> perl-Digest-MD5 -> perl-Digest -> perl-MIME-Base64
+[    8s]   breaking dependency perl -> perl-libnet
+[    8s] cycle: perl -> perl-podlators
+[    8s]   breaking dependency perl -> perl-podlators
+[    8s] cycle: perl -> perl-version
+[    8s]   breaking dependency perl -> perl-version
+[    8s] cycle: openssh -> openssh-server
+[    8s]   breaking dependency openssh-server -> openssh
+[    8s] cycle: perl-Getopt-Long -> perl-Pod-Usage
+[    8s]   breaking dependency perl-Pod-Usage -> perl-Getopt-Long
+[    8s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Encode
+[    8s]   breaking dependency perl-podlators -> perl-Encode
+[    8s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators
+[    8s]   breaking dependency perl-podlators -> perl-Getopt-Long
+[    8s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Pod-Simple -> perl-Encode
+[    8s]   breaking dependency perl-Encode -> perl-Getopt-Long
+[    8s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-podlators -> perl-Pod-Simple
+[    8s]   breaking dependency perl-podlators -> perl-Pod-Simple
+[    8s] cycle: perl-Pod-Usage -> perl-podlators
+[    8s]   breaking dependency perl-podlators -> perl-Pod-Usage
+[    8s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-Pod-Perldoc -> groff
+[    8s]   breaking dependency groff -> perl-Getopt-Long
+[    8s] cycle: perl-Getopt-Long -> perl-Pod-Usage -> perl-Pod-Perldoc -> perl-Pod-Simple
+[    8s]   breaking dependency perl-Pod-Perldoc -> perl-Pod-Simple
+[    8s] cycle: git -> perl-Git
+[    8s]   breaking dependency git -> perl-Git
+[    8s] cycle: golang-devel -> golang
+[    8s]   breaking dependency golang -> golang-devel
+[    8s] cycle: httpd -> mod_http2
+[    8s]   breaking dependency httpd -> mod_http2
+[    8s] cycle: openblas-devel -> openblas
+[    8s]   breaking dependency openblas -> openblas-devel
+[    8s] cycle: cmake-data -> cmake
+[    8s]   breaking dependency cmake -> cmake-data
+[    8s] cycle: nss-util -> nss
+[    8s]   breaking dependency nss -> nss-util
+[    8s] cycle: nss-softokn -> nss-util -> nss
+[    8s]   breaking dependency nss -> nss-softokn
+[    8s] cycle: perl-ExtUtils-Install -> perl-ExtUtils-MakeMaker
+[    8s]   breaking dependency perl-ExtUtils-MakeMaker -> perl-ExtUtils-Install
+[    9s] done
+[    9s] Warning: cross compile not possible due to missing static binaries. please install build-initvm package for that purpose.
+[    9s]          check that the right architecture is available for your build host, you need initvm.x86_64 for this one.
+[    9s] booting docker...
+[   16s] 2nd stage started in virtual machine
+[   16s] machine type: riscv64
+[   16s] Linux version: 5.3.18-150300.59.54-default #1 SMP Sat Mar 5 10:00:50 UTC 2022 (1d0fa95)
+[   16s] Increasing log level from now on...
+[   16s] Enable sysrq operations
+[   16s] WARNING: udev not running, creating extra device nodes
+[   16s] processing recipe /.build-srcdir/_service:extract_file:atune.spec ...
+[   16s] init_buildsystem --configdir /.build/configs --cachedir /var/cache/build /.build-srcdir/_service:extract_file:atune.spec build ...
+[   16s] initializing rpm db...
+[   17s] querying package ids...
+[   24s] [1/385] installing cmake-filesystem-3.22.0-1.oe1
+[   24s] [2/385] installing fuse-common-3.9.2-5.oe2
+[   24s] [3/385] installing kernel-headers-5.10.0_1650770447-0.oe2
+[   25s] [4/385] installing libreport-filesystem-2.13.1-5.oe2
+[   25s] [5/385] installing ncurses-base-6.3-2.oe2
+[   25s] [6/385] installing openEuler-gpg-keys-1.0-3.4
+[   26s] [7/385] installing python-setuptools-59.4.0-3.oe2
+[   26s] [8/385] installing qt5-srpm-macros-5.15.2-1
+[   26s] [9/385] installing tzdata-2022a-1.oe1
+[   26s] [10/385] installing dnf-data-4.10.0-4.oe2
+[   26s] [11/385] installing openEuler-repos-1.0-3.4
+[   27s] [12/385] installing filesystem-3.14-2
+[   28s] warning: group mail does not exist - using root
+[   28s] [13/385] installing emacs-filesystem-1:27.1-5.oe1
+[   28s] [14/385] installing libgcc-10.3.1-20220105.6.oe2
+[   28s] [15/385] installing ncurses-libs-6.3-2.oe2
+[   28s] [16/385] installing readline-8.1-1.oe2
+[   29s] [17/385] installing pcre2-10.39-1.oe2
+[   29s] [18/385] installing bash-5.1.8-1.oe2
+[   30s] [19/385] installing libsepol-3.3-1.oe2
+[   30s] [20/385] installing libselinux-3.3-1.oe2
+[   30s] [21/385] installing glibc-common-2.34-80.oe2
+[   32s] [22/385] installing glibc-2.34-80.oe2
+[   33s] [23/385] installing brotli-1.0.9-2.oe2
+[   34s] [24/385] installing chrpath-0.16-12.oe2
+[   34s] [25/385] installing cpio-2.13-4.oe1
+[   34s] [26/385] installing diffutils-3.7-4.oe1
+[   34s] [27/385] installing expat-2.2.10-1.oe2
+[   35s] [28/385] installing json-c-0.15-2.oe2
+[   35s] [29/385] installing keyutils-libs-1.6.3-3.oe2
+[   35s] [30/385] installing libICE-1.0.10-2.oe2
+[   35s] [31/385] installing libXau-1.0.9-2.oe2
+[   36s] [32/385] installing libaio-0.3.112-1.oe2
+[   36s] [33/385] installing libargon2-20190702-1.oe2
+[   36s] [34/385] installing libatomic-10.3.1-20220105.6.oe2
+[   36s] [35/385] installing libcap-ng-0.7.11-1.oe2
+[   37s] [36/385] installing libev-4.33-2.oe2
+[   37s] [37/385] installing libffi-3.3-31.oe2
+[   37s] [38/385] installing libgomp-10.3.1-20220105.6.oe2
+[   37s] [39/385] installing libgpg-error-1.41-1.oe2
+[   38s] [40/385] installing libmnl-1.0.4-10.oe2
+[   38s] [41/385] installing libnfnetlink-1.0.1-15.oe2
+[   38s] [42/385] installing libnghttp2-1.46.0-1.oe2
+[   38s] [43/385] installing libpcap-14:1.9.1-7.oe2
+[   39s] [44/385] installing libpipeline-1.5.3-1.oe2
+[   39s] [45/385] installing libsigsegv-2.12-1.oe1
+[   39s] [46/385] installing libsmartcols-2.36.1-6.oe1
+[   39s] [47/385] installing libtasn1-4.16.0-2.oe1
+[   40s] [48/385] installing libtool-ltdl-2.4.7-1.oe2
+[   40s] [49/385] installing libunistring-0.9.10-8.oe2
+[   40s] [50/385] installing libuuid-2.36.1-6.oe1
+[   40s] [51/385] installing libuv-1:1.44.1-1.oe2
+[   41s] [52/385] installing libxcrypt-4.4.17-1.oe2
+[   41s] [53/385] installing libyaml-0.2.5-1.oe2
+[   41s] [54/385] installing lz4-1.9.3-1.oe2
+[   42s] [55/385] installing m4-1.4.18-14.oe1
+[   42s] [56/385] installing nspr-4.32.0-1.oe2
+[   42s] [57/385] installing pkgconf-1.7.3-1.oe2
+[   42s] [58/385] installing rhash-1.4.2-1.oe2
+[   43s] [59/385] installing utf8proc-2.6.1-1.oe2
+[   43s] [60/385] installing which-2.21-14.oe2
+[   43s] [61/385] installing xz-libs-5.2.5-1.oe2
+[   43s] [62/385] installing attr-2.4.48-12.oe2
+[   44s] [63/385] installing less-563-2.oe2
+[   44s] [64/385] installing libedit-3.1-27.oe2
+[   44s] [65/385] installing libgfortran-10.3.1-20220105.6.oe2
+[   45s] [66/385] installing libstdc++-10.3.1-20220105.6.oe2
+[   45s] [67/385] installing zlib-1.2.11-18.oe2
+[   46s] [68/385] installing gdbm-1:1.18.1-1.oe1
+[   46s] [69/385] installing psmisc-23.3-2.oe2
+[   46s] [70/385] installing bc-1.07.1-10.oe2
+[   46s] [71/385] installing libstdc++-devel-10.3.1-20220105.6.oe2
+[   48s] [72/385] installing audit-libs-1:3.0-2.oe2
+[   48s] [73/385] installing elfutils-libelf-0.185-3.oe2
+[   48s] [74/385] installing file-libs-5.39-6.oe2
+[   49s] [75/385] installing gmp-1:6.2.1-3.oe2
+[   49s] [76/385] installing libacl-2.3.1-2.oe1
+[   50s] [77/385] installing libassuan-2.5.4-1.oe2
+[   50s] [78/385] installing libgcrypt-1.8.7-1.oe2
+[   50s] [79/385] installing libpng-2:1.6.37-1.oe2
+[   50s] [80/385] installing libxcb-1.14-1.oe1
+[   51s] [81/385] installing openEuler-release-22.03LTS-52.oe2
+[   51s] [82/385] installing fuse-2.9.9-6.oe1
+[   51s] [83/385] installing gc-8.0.4-3.oe2
+[   52s] [84/385] installing libSM-1.2.3-2.oe2
+[   52s] [85/385] installing libdb-5.3.28-37.oe2
+[   53s] [86/385] installing libffi-devel-3.3-31.oe2
+[   53s] [87/385] installing libnetfilter_conntrack-1.0.8-2.oe2
+[   54s] [88/385] installing libxml2-2.9.12-5.oe2
+[   54s] [89/385] installing patch-2.7.6-12.oe2
+[   54s] [90/385] installing pcre-8.45-1.oe2
+[   54s] [91/385] installing perl-libs-4:5.28.0-435.oe2
+[   55s] [92/385] installing zstd-1.4.8-2.oe2
+[   56s] [93/385] installing info-6.7-2.oe2
+[   56s] [94/385] installing thin-provisioning-tools-0.9.0-3.oe2
+[   56s] [95/385] installing ncurses-6.3-2.oe2
+[   57s] [96/385] installing perl-parent-1:0.238-1.oe2
+[   57s] [97/385] installing perl-perlfaq-5.20200523-1.oe2
+[   57s] [98/385] installing libX11-1.7.0-2.oe2
+[   58s] [99/385] installing mpfr-4.1.0-1.oe2
+[   58s] [100/385] installing perl-Exporter-5.74-1.oe2
+[   58s] [101/385] installing setup-2.13.9.1-1.oe2
+[   59s] [102/385] installing file-5.39-6.oe2
+[   59s] [103/385] installing libbpf-2:0.1.1-1.oe2
+[   60s] [104/385] installing sed-4.8-2.oe2
+[   60s] [105/385] installing acl-2.3.1-2.oe1
+[   60s] [106/385] installing grep-3.7-3.oe1
+[   61s] [107/385] installing iptables-libs-1.8.7-4.oe2
+[   61s] [108/385] installing libcomps-0.1.15-1.oe2
+[   61s] [109/385] installing coreutils-9.0-3.oe1
+[   63s] [110/385] installing basesystem-12-2
+[   63s] [111/385] installing crontabs-1.11-22
+[   63s] [112/385] installing elfutils-default-yama-scope-0.185-3.oe2
+[   64s] /usr/lib/systemd/systemd-sysctl: error while loading shared libraries: libkmod.so.2: cannot open shared object file: No such file or directory
+[   64s] [113/385] installing libXext-1.3.4-2.oe2
+[   64s] [114/385] installing libXpm-3.5.13-1.oe2
+[   64s] [115/385] installing mailcap-2.1.49-2.oe2
+[   65s] [116/385] installing openEuler-logos-1.0-8
+[   66s] [117/385] installing perl-Carp-1.50-418.oe2
+[   66s] [118/385] installing perl-Perl-OSType-1.010-421.oe2
+[   66s] [119/385] installing perl-Term-ANSIColor-5.01-1.oe2
+[   66s] [120/385] installing publicsuffix-list-20200718-1.oe2
+[   67s] [121/385] installing uname-build-checks-1.0-0.5.oe2
+[   67s] [122/385] installing bzip2-1.0.8-3.oe2
+[   67s] [123/385] installing gzip-1.11-1.oe2
+[   67s] [124/385] installing hostname-3.21-2.oe2
+[   68s] [125/385] installing libmpc-1.2.0-2.oe2
+[   68s] [126/385] installing npth-1.6-2.oe2
+[   68s] [127/385] installing popt-1.18-1.oe2
+[   69s] [128/385] installing libXt-1.2.0-0.oe2
+[   69s] [129/385] installing libblkid-2.36.1-6.oe1
+[   70s] [130/385] installing libidn2-2.3.0-1.oe2
+[   70s] [131/385] installing libksba-1.5.0-1.oe2
+[   71s] [132/385] installing tar-2:1.32-3.oe1
+[   71s] [133/385] installing tcl-1:8.6.10-3.oe2
+[   72s] [134/385] installing apr-1.7.0-4.oe1
+[   73s] [135/385] installing jsoncpp-1.9.4-1.oe2
+[   73s] [136/385] installing libgpg-error-devel-1.41-1.oe2
+[   74s] [137/385] installing lua-5.4.3-2.oe2
+[   74s] [138/385] installing slang-2.3.2-8.oe2
+[   75s] [139/385] installing xz-5.2.5-1.oe2
+[   75s] [140/385] installing findutils-2:4.7.0-7.oe1
+[   75s] [141/385] installing gawk-5.1.0-1.oe2
+[   76s] [142/385] installing glibc-devel-2.34-80.oe2
+[   78s] [143/385] installing openblas-0.3.18-2.oe2
+[  132s] [144/385] installing gettext-0.21-4.oe2
+[  133s] [145/385] installing iproute-5.15.0-3.oe2
+[  134s] [146/385] installing systemd-libs-249-11.oe1
+[  135s] [147/385] installing guile-5:2.0.14-15.oe2
+[  136s] [148/385] installing dbus-libs-1:1.12.20-3.oe2
+[  137s] [149/385] installing zip-3.0-29.oe2
+[  137s] [150/385] installing libfdisk-2.36.1-6.oe1
+[  138s] [151/385] installing libxcrypt-devel-4.4.17-1.oe2
+[  138s] [152/385] installing lua-posix-35.0-1.oe2
+[  138s] [153/385] installing newt-0.52.21-4.oe2
+[  139s] [154/385] installing p11-kit-0.23.22-1.oe2
+[  139s] [155/385] installing perl-Text-ParseWords-3.30-419.oe2
+[  139s] [156/385] installing procps-ng-3.3.16-15.oe2
+[  140s] [157/385] installing elfutils-libs-0.185-3.oe2
+[  140s] [158/385] installing libXmu-1.1.3-1.oe2
+[  140s] [159/385] installing libmount-2.36.1-6.oe1
+[  141s] [160/385] installing unzip-6.0-47.oe2
+[  141s] [161/385] installing cracklib-2.9.7-6.oe2
+[  142s] [162/385] installing e2fsprogs-1.46.4-8.oe2
+[  143s] [163/385] installing libsemanage-3.3-1.oe2
+[  143s] [164/385] installing make-1:4.3-3.oe2
+[  143s] [165/385] installing sqlite-3.36.0-2.oe2
+[  144s] [166/385] installing logrotate-3.17.0-1.oe2
+[  145s] [167/385] installing perl-Scalar-List-Utils-4:1.60-1.oe2
+[  145s] [168/385] installing perl-Time-HiRes-1:1.9764-1.oe2
+[  145s] [169/385] installing perl-Unicode-Normalize-1.26-419.oe2
+[  146s] [170/385] installing libgcrypt-devel-1.8.7-1.oe2
+[  146s] [171/385] installing cpp-10.3.1-20220105.6.oe2
+[  148s] [172/385] installing gnupg2-2.2.27-2.oe2
+[  149s] [173/385] installing dbus-tools-1:1.12.20-3.oe2
+[  149s] [174/385] installing copy-jdk-configs-4.0-1
+[  150s] [175/385] installing gpgme-1.15.1-1.oe1
+[  150s] [176/385] installing obs-env-1.0-7.oe2
+[  152s] [177/385] installing chkconfig-1.14-2.oe2
+[  152s] [178/385] installing libXaw-1.0.13-13.oe2
+[  152s] [179/385] installing elfutils-0.185-3.oe2
+[  153s] [180/385] installing glib2-2.66.8-1.oe2
+[  154s] [181/385] installing gamin-0.1.10-39.oe2
+[  155s] [182/385] installing libsecret-0.20.4-1.oe1
+[  155s] [183/385] installing gobject-introspection-1.66.1-1.oe2
+[  156s] [184/385] installing binutils-2.37-6.oe2
+[  158s] [185/385] installing p11-kit-trust-0.23.22-1.oe2
+[  158s] [186/385] installing babeltrace-1.5.8-1.oe2
+[  159s] [187/385] installing ca-certificates-2020.2.46-2.oe2
+[  161s] [188/385] installing gcc-10.3.1-20220105.6.oe2
+[  166s] [189/385] installing python-pip-wheel-20.3.3-1.oe2
+[  166s] [190/385] installing gcc-c++-10.3.1-20220105.6.oe2
+[  169s] [191/385] installing python3-3.9.9-1.oe2
+[  173s] [192/385] installing python3-apipkg-1.5-3.oe2
+[  173s] [193/385] installing python3-attrs-20.3.0-1.oe2
+[  173s] [194/385] installing python3-iniconfig-1.1.1-1.oe2
+[  174s] [195/385] installing python3-joblib-1.0.0-1.oe2
+[  174s] [196/385] installing python3-pluggy-0.13.1-1.oe2
+[  174s] [197/385] installing python3-pyparsing-2.4.7-3.oe2
+[  175s] [198/385] installing python3-setuptools-59.4.0-3.oe2
+[  175s] [199/385] installing python3-six-1.15.0-3.oe2
+[  176s] [200/385] installing python3-sortedcontainers-2.1.0-1.oe2
+[  176s] [201/385] installing python3-threadpoolctl-2.1.0-1.oe2
+[  177s] [202/385] installing python3-toml-0.10.2-2.oe2
+[  177s] [203/385] installing python3-pytz-2020.5-1.oe2
+[  177s] [204/385] installing python3-gpgme-1.15.1-1.oe1
+[  178s] [205/385] installing python3-pyyaml-5.3.1-4.oe2
+[  178s] [206/385] installing crypto-policies-20200619-1.git781bbd4.oe1
+[  179s] [207/385] installing python3-libcomps-0.1.15-1.oe2
+[  179s] [208/385] installing libpsl-0.21.1-1.oe2
+[  180s] [209/385] installing gdb-headless-11.1-2.oe2
+[  181s] [210/385] installing python3-execnet-1.7.1-1.oe2
+[  181s] [211/385] installing python3-packaging-21.3-1.oe2
+[  182s] [212/385] installing python3-py-1.11.0-1.oe2
+[  182s] [213/385] installing python3-pyaml-19.4.1-1.oe2
+[  182s] [214/385] installing systemtap-sdt-devel-4.4-1.oe2
+[  183s] [215/385] installing gdb-11.1-2.oe2
+[  183s] [216/385] installing python3-dateutil-1:2.8.1-3.oe2
+[  183s] [217/385] installing python3-hypothesis-5.20.3-2.oe2
+[  184s] [218/385] installing openssl-libs-1:1.1.1l-2.oe2
+[  185s] [219/385] installing python3-numpy-1:1.21.4-3.oe1
+[  187s] [220/385] installing libevent-2.1.12-4.oe2
+[  188s] [221/385] installing fipscheck-1.5.0-8.oe2
+[  188s] [222/385] installing kmod-libs-27-4.oe2
+[  188s] [223/385] installing kmod-27-4.oe2
+[  189s] [224/385] installing python3-scipy-1.6.2-1.oe1
+[  194s] [225/385] installing python3-pytest-6.2.5-1.oe2
+[  195s] [226/385] installing libarchive-3.5.2-1.oe2
+[  195s] [227/385] installing python3-pytest-forked-1.0.2-2.oe2
+[  196s] [228/385] installing libverto-0.3.1-2.oe2
+[  196s] [229/385] installing python3-scikit-learn-0.24.0-2.oe2
+[  199s] [230/385] installing python3-xgboost-0.90-4.oe2
+[  201s] [231/385] installing systemd-249-11.oe1
+[  204s] /var/tmp/rpm-tmp.HlVSDi: line 8: groupadd: command not found
+[  204s] /var/tmp/rpm-tmp.HlVSDi: line 10: groupadd: command not found
+[  204s] [232/385] installing dbus-common-1:1.12.20-3.oe2
+[  204s] [233/385] installing python3-pytest-xdist-2.3.0-1.oe2
+[  205s] [234/385] installing net-tools-2.0-0.55.oe2
+[  205s] [235/385] installing python3-scikit-optimize-0.8.1-1.oe2
+[  206s] [236/385] installing krb5-libs-1.18.2-3.oe1
+[  206s] [237/385] installing libtirpc-1.3.1-1.oe2
+[  207s] [238/385] installing cyrus-sasl-lib-2.1.27-10.oe2
+[  207s] [239/385] installing libssh-0.9.5-1.oe2
+[  207s] [240/385] installing audit-1:3.0-2.oe2
+[  208s] [241/385] installing python3-pandas-1.3.2-1.oe1
+[  213s] [242/385] installing libnsl2-2.0.0-2.oe2
+[  214s] [243/385] installing openldap-2.6.0-2.oe1
+[  214s] [244/385] installing libcurl-7.79.1-1.oe2
+[  215s] [245/385] installing pam-1.5.1-1.oe2
+[  215s] [246/385] installing libpwquality-1.4.4-1.oe2
+[  216s] [247/385] installing curl-7.79.1-1.oe2
+[  216s] [248/385] installing libcap-2.61-1.oe2
+[  216s] [249/385] installing mariadb-connector-c-3.0.6-7.oe1
+[  217s] [250/385] installing tpm2-tss-3.0.3-1.oe2
+[  218s] [251/385] installing librepo-1.14.2-2.oe2
+[  218s] [252/385] installing shadow-2:4.8.1-5.oe2
+[  219s] [253/385] installing httpd-filesystem-2.4.51-3.oe2
+[  220s] [254/385] installing ima-evm-utils-libs-1.4-1.oe2
+[  220s] [255/385] installing libutempter-1.2.1-2.oe2
+[  221s] [256/385] installing iputils-20210722-2.oe1
+[  222s] [257/385] installing apr-util-1.6.1-11.oe2
+[  222s] [258/385] installing dbus-daemon-1:1.12.20-3.oe2
+[  223s] [259/385] installing openssh-server-8.2p1-10.oe2
+[  224s] Created symlink /etc/systemd/system/multi-user.target.wants/sshd.service -> /usr/lib/systemd/system/sshd.service.
+[  224s] [260/385] installing dbus-1:1.12.20-3.oe2
+[  225s] [261/385] installing httpd-tools-2.4.51-3.oe2
+[  225s] [262/385] installing libserf-1.3.9-12.oe2
+[  225s] [263/385] installing util-linux-2.36.1-6.oe1
+[  227s] [264/385] installing rpm-4.15.1-30.oe2
+[  227s] [265/385] installing efi-srpm-macros-4-3.oe2
+[  228s] [266/385] installing cmake-rpm-macros-3.22.0-1.oe1
+[  228s] [267/385] installing device-mapper-8:1.02.172-1.oe2
+[  229s] [268/385] installing openssh-8.2p1-10.oe2
+[  229s] [269/385] installing rpm-libs-4.15.1-30.oe2
+[  230s] [270/385] installing httpd-2.4.51-3.oe2
+[  231s] [271/385] installing mod_http2-1.15.16-1.oe2
+[  232s] [272/385] installing libmodulemd-2.13.0-1.oe2
+[  232s] [273/385] installing libsolv-0.7.20-1.oe2
+[  232s] [274/385] installing device-mapper-event-8:1.02.172-1.oe2
+[  233s] Created symlink /etc/systemd/system/sockets.target.wants/dm-event.socket -> /usr/lib/systemd/system/dm-event.socket.
+[  233s] [275/385] installing cryptsetup-2.4.1-1.oe2
+[  234s] [276/385] installing openEuler-rpm-config-30-25
+[  234s] [277/385] installing openssh-clients-8.2p1-10.oe2
+[  235s] [278/385] installing cmake-3.22.0-1.oe1
+[  238s] [279/385] installing subversion-1.14.0-2.oe2
+[  239s] [280/385] installing python3-rpm-4.15.1-30.oe2
+[  239s] [281/385] installing openblas-devel-0.3.18-2.oe2
+[  240s] [282/385] installing cmake-data-3.22.0-1.oe1
+[  242s] [283/385] installing libdnf-0.65.0-2.oe2
+[  242s] [284/385] installing lvm2-8:2.03.11-1.oe2
+[  244s] Created symlink /etc/systemd/system/sysinit.target.wants/lvm2-lvmpolld.socket -> /usr/lib/systemd/system/lvm2-lvmpolld.socket.
+[  244s] [285/385] installing rpm-build-4.15.1-30.oe2
+[  244s] [286/385] installing perl-4:5.28.0-435.oe2
+[  246s] [287/385] installing perl-B-Debug-1.26-4.oe2
+[  246s] [288/385] installing perl-Env-1.04-397.oe2
+[  246s] [289/385] installing perl-Devel-PPPort-3.62-1.oe2
+[  247s] [290/385] installing perl-Pod-Escapes-1:1.07-419.oe2
+[  247s] [291/385] installing perl-Text-Tabs+Wrap-2013.0523-419.oe2
+[  247s] [292/385] installing perl-Algorithm-Diff-1.1903-14.oe2
+[  247s] [293/385] installing perl-Params-Check-1:0.38-418.oe2
+[  247s] [294/385] installing perl-Term-Cap-1.17-510.oe2
+[  248s] [295/385] installing perl-TermReadKey-2.38-2.oe2
+[  248s] [296/385] installing perl-Text-Balanced-2.04-1.oe2
+[  248s] [297/385] installing perl-threads-2:2.21-2.oe2
+[  249s] [298/385] installing perl-Config-Perl-V-0.33-1.oe2
+[  249s] [299/385] installing perl-Error-1:0.17029-1.oe2
+[  249s] [300/385] installing perl-Filter-2:1.60-2.oe2
+[  249s] [301/385] installing perl-IPC-SysV-2.09-1.oe2
+[  250s] [302/385] installing perl-Locale-Maketext-1:1.29-1.oe2
+[  250s] [303/385] installing perl-constant-1.33-421.oe2
+[  250s] [304/385] installing openssl-1:1.1.1l-2.oe2
+[  251s] [305/385] installing perl-MIME-Base64-3.15-419.oe2
+[  251s] [306/385] installing perl-CPAN-Meta-YAML-0.018-420.oe2
+[  251s] [307/385] installing perl-Socket-4:2.031-1.oe2
+[  252s] [308/385] installing perl-Storable-1:3.15-2.oe2
+[  252s] [309/385] installing gcc_secure-1.0-0.10.oe2
+[  253s] [310/385] installing python3-libdnf-0.65.0-2.oe2
+[  253s] [311/385] installing perl-PerlIO-via-QuotedPrint-0.09-1.oe2
+[  254s] [312/385] installing perl-Digest-1.17-419.oe2
+[  254s] [313/385] installing perl-Filter-Simple-1:0.94-1.oe2
+[  254s] [314/385] installing perl-IO-Socket-IP-0.41-2.oe2
+[  254s] [315/385] installing perl-Text-Diff-1.45-7.oe2
+[  254s] [316/385] installing perl-Time-Local-2:1.300-1.oe2
+[  255s] [317/385] installing perl-version-8:0.99.28-1.oe2
+[  255s] [318/385] installing perl-IPC-System-Simple-1.30-2.oe2
+[  255s] [319/385] installing perl-threads-shared-1.59-4.oe2
+[  256s] [320/385] installing perl-Compress-Raw-Bzip2-2.100-1.oe2
+[  256s] [321/385] installing perl-Compress-Raw-Zlib-1:2.100-1.oe2
+[  257s] [322/385] installing perl-Locale-Codes-3.66-1.oe2
+[  257s] [323/385] installing perl-Math-BigInt-1:1.9998.18-1.oe2
+[  257s] [324/385] installing perl-PathTools-3.75-5.oe2
+[  258s] [325/385] installing perl-Data-Dumper-2.173-1.oe2
+[  258s] [326/385] installing perl-Sys-Syslog-0.36-1.oe2
+[  259s] [327/385] installing perl-Encode-1:3.08-1.oe2
+[  260s] [328/385] installing python3-hawkey-0.65.0-2.oe2
+[  261s] [329/385] installing perl-Module-Load-1:0.36-1.oe2
+[  261s] [330/385] installing perl-Digest-MD5-2.58-1.oe2
+[  261s] [331/385] installing perl-File-Which-1.23-1.oe2
+[  262s] [332/385] installing perl-Thread-Queue-3.13-3.oe2
+[  262s] [333/385] installing perl-experimental-0.022-1.oe2
+[  262s] [334/385] installing perl-File-Path-2.17-1.oe2
+[  262s] [335/385] installing perl-Module-Metadata-1.000037-1.oe2
+[  262s] [336/385] installing perl-CPAN-Meta-Requirements-2.140-419.oe2
+[  263s] [337/385] installing perl-Encode-devel-1:3.08-1.oe2
+[  263s] [338/385] installing perl-HTTP-Tiny-0.076-3.oe2
+[  263s] [339/385] installing perl-Math-BigInt-FastCalc-0.501.200-1.oe2
+[  264s] [340/385] installing perl-Math-BigRat-0.2614-2.oe2
+[  264s] [341/385] installing perl-DB_File-1.855-1.oe2
+[  264s] [342/385] installing perl-autodie-2.34-1.oe2
+[  265s] [343/385] installing python3-dnf-4.10.0-4.oe2
+[  265s] [344/385] installing perl-Unicode-Collate-1.29-1.oe2
+[  266s] [345/385] installing perl-podlators-1:4.14-1.oe2
+[  266s] [346/385] installing dnf-4.10.0-4.oe2
+[  267s] [347/385] installing perl-ExtUtils-Command-1:7.60-1.oe2
+[  267s] [348/385] installing perl-ExtUtils-Manifest-1:1.72-1.oe2
+[  267s] [349/385] installing perl-bignum-0.51-1.oe2
+[  268s] [350/385] installing perl-File-Temp-1:0.2311-1.oe2
+[  268s] [351/385] installing perl-libnet-3.13-1.oe2
+[  268s] [352/385] installing perl-File-HomeDir-1.006-1.oe2
+[  268s] [353/385] installing perl-Test-Simple-2:1.302175-2.oe2
+[  269s] [354/385] installing groff-1.22.4-4.oe2
+[  270s] [355/385] installing man-db-2.9.3-2.oe2
+[  271s] [356/385] installing perl-Pod-Perldoc-1:3.28-3.oe2
+[  271s] [357/385] installing nss-help-3.72.0-2.oe2
+[  271s] [358/385] installing perl-Pod-Usage-4:2.01-2.oe2
+[  272s] [359/385] installing perl-Getopt-Long-1:2.52-1.oe2
+[  272s] [360/385] installing nss-3.72.0-2.oe2
+[  273s] [361/385] installing nss-util-3.72.0-2.oe2
+[  274s] [362/385] installing perl-ExtUtils-ParseXS-2:3.35-1.oe2
+[  274s] [363/385] installing perl-Module-CoreList-1:5.20201220-1.oe2
+[  275s] [364/385] installing perl-Digest-SHA-1:6.02-7.oe2
+[  275s] [365/385] installing perl-Pod-Parser-1.63-397.oe2
+[  275s] [366/385] installing perl-Pod-Simple-1:3.42-1.oe2
+[  276s] [367/385] installing perl-Test-Harness-1:3.43_02-1.oe2
+[  276s] [368/385] installing perl-IO-Compress-2.100-1.oe2
+[  276s] [369/385] installing perl-JSON-PP-1:4.05-1.oe2
+[  276s] [370/385] installing autoconf-2.71-1.oe2
+[  277s] [371/385] installing git-2.33.0-1.oe2
+[  279s] [372/385] installing nss-softokn-3.72.0-2.oe2
+[  280s] [373/385] installing perl-Git-2.33.0-1.oe2
+[  280s] [374/385] installing perl-Pod-Checker-4:1.74-1.oe2
+[  280s] [375/385] installing golang-1.17.3-2.oe2
+[  312s] [376/385] installing perl-CPAN-Meta-2.150010-419.oe2
+[  313s] [377/385] installing perl-Module-Load-Conditional-0.74-1.oe2
+[  313s] [378/385] installing perl-Archive-Tar-2.38-1.oe2
+[  313s] [379/385] installing automake-1.16.2-2.oe1
+[  314s] [380/385] installing perl-ExtUtils-MakeMaker-1:7.60-1.oe2
+[  314s] [381/385] installing golang-devel-1.17.3-2.oe2
+[  322s] [382/385] installing perl-ExtUtils-Install-2.20-1.oe2
+[  322s] [383/385] installing perl-IPC-Cmd-2:1.04-4.oe2
+[  322s] [384/385] installing perl-File-Fetch-1.00-1.oe2
+[  323s] [385/385] installing perl-devel-4:5.28.0-435.oe2
+[  324s] now finalizing build dir...
+[  325s] RTNETLINK answers: File exists
+[  325s] RTNETLINK answers: Permission denied
+[  325s] Network setup
+[  325s] Cannot find device "eth0"
+[  325s] Cannot find device "eth0"
+[  325s] Cannot find device "eth0"
+[  325s] Error: Nexthop has invalid gateway.
+[  325s] 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+[  325s]     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+[  325s]     inet 127.0.0.1/8 scope host lo
+[  325s]        valid_lft forever preferred_lft forever
+[  325s] /sbin/ping: mirrors.huaweicloud.com: Name or service not known
+[  326s] Running build time source services...
+[  328s] -----------------------------------------------------------------
+[  328s] ----- building atune.spec (user abuild)
+[  328s] -----------------------------------------------------------------
+[  328s] -----------------------------------------------------------------
+[  329s] + exec rpmbuild -ba --define '_srcdefattr (-,root,root)' --nosignature --define 'disturl obs://private/home:Emmmer:branches:Factory:RISC-V/22.03/b716e3da2e9818abb63099ac785984dc-A-Tune' /home/abuild/rpmbuild/SOURCES/atune.spec
+[  330s] Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.Pr6sqp
+[  330s] + umask 022
+[  330s] + cd /home/abuild/rpmbuild/BUILD
+[  330s] + cd /home/abuild/rpmbuild/BUILD
+[  330s] + rm -rf A-Tune-v1.0.0
+[  330s] + /usr/bin/gzip -dc /home/abuild/rpmbuild/SOURCES/v1.0.0.tar.gz
+[  330s] + /usr/bin/tar -xof -
+[  331s] + STATUS=0
+[  331s] + '[' 0 -ne 0 ']'
+[  331s] + cd A-Tune-v1.0.0
+[  331s] + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
+[  331s] + RPM_EC=0
+[  331s] ++ jobs -p
+[  331s] + exit 0
+[  331s] Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.X4LfN7
+[  331s] + umask 022
+[  331s] + cd /home/abuild/rpmbuild/BUILD
+[  331s] + cd A-Tune-v1.0.0
+[  331s] + sed -i 's/^rest_tls.*/rest_tls = false/' misc/atuned.cnf
+[  331s] + sed -i 's/^engine_tls.*/engine_tls = false/' misc/atuned.cnf
+[  331s] + sed -i 's/^engine_tls.*/engine_tls = false/' misc/engine.cnf
+[  331s] + /usr/bin/make -O -j16 V=1 VERBOSE=1
+[  333s] sqlite3 database/atuned.db ".read database/init.sql"
+[  379s] go build -mod=vendor -v -ldflags '-s -w -extldflags "-static" -extldflags "-zrelro" -extldflags "-znow" -extldflags "-ftrapv" -X gitee.com/openeuler/A-Tune/common/config.Version=0.3' -o pkg/atune-adm cmd/atune-adm/*.go
+[  379s] google.golang.org/grpc/internal/grpcsync
+[  379s] golang.org/x/text/transform
+[  379s] google.golang.org/grpc/encoding
+[  379s] google.golang.org/grpc/internal/grpcrand
+[  379s] google.golang.org/grpc/keepalive
+[  379s] google.golang.org/grpc/tap
+[  379s] github.com/go-ini/ini
+[  379s] golang.org/x/net/context
+[  379s] golang.org/x/sys/unix
+[  379s] golang.org/x/net/internal/timeseries
+[  379s] github.com/golang/protobuf/proto
+[  379s] google.golang.org/grpc/grpclog
+[  379s] google.golang.org/grpc/metadata
+[  379s] google.golang.org/grpc/codes
+[  379s] google.golang.org/grpc/credentials/internal
+[  379s] google.golang.org/grpc/internal/envconfig
+[  379s] google.golang.org/grpc/internal/backoff
+[  379s] golang.org/x/text/unicode/bidi
+[  379s] golang.org/x/net/http2/hpack
+[  379s] github.com/urfave/cli
+[  379s] gopkg.in/yaml.v2
+[  379s] github.com/bndr/gotabulate
+[  379s] golang.org/x/net/trace
+[  379s] google.golang.org/grpc/connectivity
+[  379s] google.golang.org/grpc/naming
+[  379s] google.golang.org/grpc/stats
+[  379s] google.golang.org/grpc/internal/balancerload
+[  379s] golang.org/x/text/unicode/norm
+[  379s] google.golang.org/grpc/internal
+[  379s] golang.org/x/text/secure/bidirule
+[  379s] google.golang.org/grpc/serviceconfig
+[  379s] google.golang.org/grpc/resolver
+[  379s] google.golang.org/grpc/internal/syscall
+[  379s] github.com/sirupsen/logrus
+[  379s] google.golang.org/grpc/resolver/dns
+[  379s] google.golang.org/grpc/resolver/passthrough
+[  379s] golang.org/x/net/idna
+[  379s] golang.org/x/net/http/httpguts
+[  379s] github.com/sirupsen/logrus/hooks/syslog
+[  379s] google.golang.org/grpc/credentials
+[  379s] google.golang.org/grpc/encoding/proto
+[  379s] github.com/golang/protobuf/ptypes/any
+[  379s] github.com/golang/protobuf/ptypes/duration
+[  379s] github.com/golang/protobuf/ptypes/timestamp
+[  379s] golang.org/x/net/http2
+[  379s] google.golang.org/grpc/binarylog/grpc_binarylog_v1
+[  379s] gitee.com/openeuler/A-Tune/common/log
+[  379s] github.com/golang/protobuf/ptypes
+[  379s] google.golang.org/genproto/googleapis/rpc/status
+[  379s] google.golang.org/grpc/balancer
+[  379s] google.golang.org/grpc/peer
+[  379s] google.golang.org/grpc/internal/channelz
+[  379s] google.golang.org/grpc/status
+[  379s] google.golang.org/grpc/balancer/base
+[  379s] google.golang.org/grpc/balancer/roundrobin
+[  379s] google.golang.org/grpc/internal/binarylog
+[  379s] google.golang.org/grpc/internal/transport
+[  379s] google.golang.org/grpc
+[  379s] gitee.com/openeuler/A-Tune/api/profile
+[  379s] gitee.com/openeuler/A-Tune/common/utils
+[  379s] gitee.com/openeuler/A-Tune/common/config
+[  379s] gitee.com/openeuler/A-Tune/common/project
+[  379s] gitee.com/openeuler/A-Tune/common/service
+[  379s] gitee.com/openeuler/A-Tune/common/client
+[  379s] gitee.com/openeuler/A-Tune/modules/client/profile
+[  379s] command-line-arguments
+[  618s] go build -mod=vendor -v -ldflags '-s -w -extldflags "-static" -extldflags "-zrelro" -extldflags "-znow" -extldflags "-ftrapv" -X gitee.com/openeuler/A-Tune/common/config.Version=0.3' -o pkg/atuned cmd/atuned/*.go
+[  618s] google.golang.org/grpc/internal/grpcsync
+[  618s] golang.org/x/text/transform
+[  618s] golang.org/x/sys/unix
+[  618s] github.com/go-ini/ini
+[  618s] golang.org/x/net/internal/timeseries
+[  618s] github.com/golang/protobuf/proto
+[  618s] google.golang.org/grpc/encoding
+[  618s] google.golang.org/grpc/grpclog
+[  618s] google.golang.org/grpc/internal/grpcrand
+[  618s] google.golang.org/grpc/metadata
+[  618s] google.golang.org/grpc/codes
+[  618s] google.golang.org/grpc/internal/envconfig
+[  618s] golang.org/x/net/http2/hpack
+[  618s] golang.org/x/text/unicode/bidi
+[  618s] google.golang.org/grpc/keepalive
+[  618s] google.golang.org/grpc/credentials/internal
+[  618s] github.com/urfave/cli
+[  618s] gopkg.in/yaml.v2
+[  618s] gitee.com/openeuler/A-Tune/common/sched
+[  618s] golang.org/x/net/trace
+[  618s] google.golang.org/grpc/internal/balancerload
+[  618s] google.golang.org/grpc/stats
+[  618s] golang.org/x/text/unicode/norm
+[  618s] xorm.io/builder
+[  618s] xorm.io/core
+[  618s] google.golang.org/grpc/connectivity
+[  618s] google.golang.org/grpc/naming
+[  618s] github.com/coreos/go-systemd/daemon
+[  618s] google.golang.org/grpc/internal
+[  618s] github.com/mattn/go-sqlite3
+[  618s] google.golang.org/grpc/serviceconfig
+[  618s] golang.org/x/text/secure/bidirule
+[  618s] google.golang.org/grpc/resolver
+[  618s] google.golang.org/grpc/resolver/dns
+[  618s] google.golang.org/grpc/resolver/passthrough
+[  618s] google.golang.org/grpc/internal/syscall
+[  618s] github.com/sirupsen/logrus
+[  618s] golang.org/x/net/idna
+[  618s] github.com/go-xorm/xorm
+[  618s] golang.org/x/net/http/httpguts
+[  618s] github.com/sirupsen/logrus/hooks/syslog
+[  618s] golang.org/x/net/http2
+[  618s] gitee.com/openeuler/A-Tune/common/log
+[  618s] google.golang.org/grpc/encoding/proto
+[  618s] github.com/golang/protobuf/ptypes/any
+[  618s] google.golang.org/grpc/binarylog/grpc_binarylog_v1
+[  618s] github.com/golang/protobuf/protoc-gen-go/descriptor
+[  618s] google.golang.org/grpc/credentials
+[  618s] github.com/golang/protobuf/ptypes
+[  618s] google.golang.org/grpc/balancer/base
+[  618s] google.golang.org/grpc/internal/channelz
+[  618s] google.golang.org/grpc/status
+[  618s] google.golang.org/grpc/balancer/roundrobin
+[  618s] google.golang.org/grpc/internal/binarylog
+[  618s] google.golang.org/grpc/internal/transport
+[  618s] google.golang.org/grpc
+[  618s] gitee.com/openeuler/A-Tune/api/profile
+[  618s] google.golang.org/grpc/reflection/grpc_reflection_v1alpha
+[  618s] google.golang.org/grpc/reflection
+[  618s] gitee.com/openeuler/A-Tune/common/utils
+[  618s] gitee.com/openeuler/A-Tune/common/config
+[  618s] gitee.com/openeuler/A-Tune/common/cpumask
+[  618s] gitee.com/openeuler/A-Tune/common/topology
+[  618s] gitee.com/openeuler/A-Tune/common/registry
+[  618s] gitee.com/openeuler/A-Tune/common/service
+[  618s] gitee.com/openeuler/A-Tune/common/http
+[  618s] gitee.com/openeuler/A-Tune/common/client
+[  618s] gitee.com/openeuler/A-Tune/common/service/pyservice
+[  618s] gitee.com/openeuler/A-Tune/common/models
+[  618s] gitee.com/openeuler/A-Tune/common/schedule/framework
+[  618s] gitee.com/openeuler/A-Tune/common/sysload
+[  618s] gitee.com/openeuler/A-Tune/common/service/timer
+[  618s] gitee.com/openeuler/A-Tune/common/schedule/plugins/powersave
+[  618s] gitee.com/openeuler/A-Tune/common/system
+[  618s] gitee.com/openeuler/A-Tune/common/schedule/filters
+[  618s] gitee.com/openeuler/A-Tune/common/schedule/plugins/numaaware
+[  618s] gitee.com/openeuler/A-Tune/common/schedule/plugins
+[  618s] # github.com/mattn/go-sqlite3
+[  618s] sqlite3-binding.c: In function 'sqlite3SelectNew':
+[  618s] sqlite3-binding.c:125322:10: warning: function may return address of local variable [-Wreturn-local-addr]
+[  618s] 125322 |   return pNew;
+[  618s]        |          ^~~~
+[  618s] sqlite3-binding.c:125282:10: note: declared here
+[  618s] 125282 |   Select standin;
+[  618s]        |          ^~~~~~~
+[  618s] gitee.com/openeuler/A-Tune/common/sqlstore
+[  618s] gitee.com/openeuler/A-Tune/common/schedule
+[  618s] gitee.com/openeuler/A-Tune/common/profile
+[  618s] gitee.com/openeuler/A-Tune/common/service/monitor
+[  618s] command-line-arguments
+[  657s] cd /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/modules/server/profile/ && go build -mod=vendor -v -ldflags '-s -w -extldflags "-static" -extldflags "-zrelro" -extldflags "-znow" -extldflags "-ftrapv" -X gitee.com/openeuler/A-Tune/common/config.Version=0.3' -buildmode=plugin -o /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/pkg/daemon_profile_server.so *.go
+[  657s] runtime/internal/sys
+[  657s] unicode/utf16
+[  657s] internal/goexperiment
+[  657s] internal/unsafeheader
+[  657s] internal/cpu
+[  657s] runtime/internal/atomic
+[  657s] internal/itoa
+[  657s] internal/nettrace
+[  657s] math/bits
+[  657s] unicode
+[  657s] container/list
+[  657s] sync/atomic
+[  657s] encoding
+[  657s] internal/race
+[  657s] unicode/utf8
+[  657s] internal/abi
+[  657s] crypto/internal/subtle
+[  657s] crypto/subtle
+[  657s] vendor/golang.org/x/crypto/cryptobyte/asn1
+[  657s] vendor/golang.org/x/crypto/internal/subtle
+[  657s] internal/goversion
+[  657s] runtime/internal/math
+[  657s] github.com/golang-collections/collections/stack
+[  657s] internal/bytealg
+[  657s] math
+[  657s] runtime
+[  657s] internal/reflectlite
+[  657s] sync
+[  657s] internal/testlog
+[  657s] internal/singleflight
+[  657s] math/rand
+[  657s] google.golang.org/grpc/internal/grpcsync
+[  657s] github.com/caibirdme/yql/internal/stack
+[  657s] runtime/cgo
+[  657s] sort
+[  657s] errors
+[  657s] io
+[  657s] internal/oserror
+[  657s] vendor/golang.org/x/net/dns/dnsmessage
+[  657s] crypto/elliptic/internal/fiat
+[  657s] path
+[  657s] strconv
+[  657s] syscall
+[  657s] bytes
+[  657s] strings
+[  657s] hash
+[  657s] crypto/internal/randutil
+[  657s] text/tabwriter
+[  657s] hash/crc32
+[  657s] crypto/hmac
+[  657s] crypto
+[  657s] crypto/rc4
+[  657s] reflect
+[  657s] vendor/golang.org/x/crypto/hkdf
+[  657s] vendor/golang.org/x/text/transform
+[  657s] golang.org/x/text/transform
+[  657s] net/http/internal/ascii
+[  657s] html
+[  657s] google.golang.org/grpc/encoding
+[  657s] bufio
+[  657s] go/build/constraint
+[  657s] regexp/syntax
+[  657s] internal/syscall/execenv
+[  657s] internal/syscall/unix
+[  657s] time
+[  657s] regexp
+[  657s] google.golang.org/grpc/internal/grpcrand
+[  657s] context
+[  657s] google.golang.org/grpc/keepalive
+[  657s] io/fs
+[  657s] internal/poll
+[  657s] internal/fmtsort
+[  657s] encoding/binary
+[  657s] google.golang.org/grpc/internal/backoff
+[  657s] google.golang.org/grpc/tap
+[  657s] golang.org/x/net/context
+[  657s] os
+[  657s] encoding/base64
+[  657s] crypto/cipher
+[  657s] crypto/sha512
+[  657s] crypto/ed25519/internal/edwards25519/field
+[  657s] crypto/sha256
+[  657s] vendor/golang.org/x/crypto/poly1305
+[  657s] crypto/sha1
+[  657s] crypto/md5
+[  657s] golang.org/x/sys/unix
+[  657s] encoding/pem
+[  657s] crypto/ed25519/internal/edwards25519
+[  657s] crypto/aes
+[  657s] vendor/golang.org/x/crypto/chacha20
+[  657s] crypto/des
+[  657s] vendor/golang.org/x/crypto/chacha20poly1305
+[  657s] fmt
+[  657s] io/ioutil
+[  657s] google.golang.org/grpc/internal/envconfig
+[  657s] path/filepath
+[  657s] internal/lazyregexp
+[  657s] os/exec
+[  657s] log
+[  657s] encoding/csv
+[  657s] encoding/json
+[  657s] vendor/golang.org/x/crypto/curve25519
+[  657s] compress/flate
+[  657s] net/url
+[  657s] text/template/parse
+[  657s] mime
+[  657s] encoding/hex
+[  657s] net/http/internal
+[  657s] vendor/golang.org/x/net/http2/hpack
+[  657s] google.golang.org/grpc/metadata
+[  657s] mime/quotedprintable
+[  657s] vendor/golang.org/x/text/unicode/norm
+[  657s] math/big
+[  657s] net
+[  657s] google.golang.org/grpc/codes
+[  657s] golang.org/x/text/unicode/norm
+[  657s] golang.org/x/net/internal/timeseries
+[  657s] vendor/golang.org/x/text/unicode/bidi
+[  657s] google.golang.org/grpc/grpclog
+[  657s] google.golang.org/grpc/internal/balancerload
+[  657s] golang.org/x/text/unicode/bidi
+[  657s] golang.org/x/net/http2/hpack
+[  657s] encoding/xml
+[  657s] github.com/go-ini/ini
+[  657s] os/user
+[  657s] flag
+[  657s] gopkg.in/yaml.v2
+[  657s] compress/gzip
+[  657s] google.golang.org/grpc/connectivity
+[  657s] plugin
+[  657s] vendor/golang.org/x/text/secure/bidirule
+[  657s] gitee.com/openeuler/A-Tune/common/sched
+[  657s] google.golang.org/grpc/internal
+[  657s] github.com/golang/protobuf/proto
+[  657s] golang.org/x/text/secure/bidirule
+[  657s] text/template
+[  657s] google.golang.org/grpc/serviceconfig
+[  657s] database/sql/driver
+[  657s] github.com/sirupsen/logrus
+[  657s] vendor/golang.org/x/net/idna
+[  657s] encoding/gob
+[  657s] github.com/antlr/antlr4/runtime/Go/antlr
+[  657s] golang.org/x/net/idna
+[  657s] google.golang.org/grpc/resolver
+[  657s] google.golang.org/grpc/resolver/passthrough
+[  657s] go/token
+[  657s] internal/buildcfg
+[  657s] crypto/rand
+[  657s] crypto/elliptic
+[  657s] encoding/asn1
+[  657s] crypto/dsa
+[  657s] database/sql
+[  657s] go/scanner
+[  657s] internal/execabs
+[  657s] crypto/ed25519
+[  657s] crypto/rsa
+[  657s] internal/goroot
+[  657s] github.com/urfave/cli
+[  657s] html/template
+[  657s] go/ast
+[  657s] crypto/x509/pkix
+[  657s] vendor/golang.org/x/crypto/cryptobyte
+[  657s] xorm.io/builder
+[  657s] xorm.io/core
+[  657s] crypto/ecdsa
+[  657s] go/doc
+[  657s] go/internal/typeparams
+[  657s] github.com/mattn/go-sqlite3
+[  657s] go/parser
+[  657s] google.golang.org/grpc/encoding/proto
+[  657s] github.com/golang/protobuf/ptypes/duration
+[  657s] github.com/golang/protobuf/ptypes/any
+[  657s] github.com/golang/protobuf/ptypes/timestamp
+[  657s] google.golang.org/genproto/googleapis/rpc/status
+[  657s] github.com/golang/protobuf/ptypes
+[  657s] google.golang.org/grpc/binarylog/grpc_binarylog_v1
+[  657s] google.golang.org/grpc/status
+[  657s] go/build
+[  657s] github.com/caibirdme/yql/internal/grammar
+[  657s] github.com/newm4n/grool/antlr/parser
+[  657s] github.com/juju/errors
+[  657s] github.com/caibirdme/yql
+[  657s] archive/tar
+[  657s] net/textproto
+[  657s] crypto/x509
+[  657s] google.golang.org/grpc/credentials/internal
+[  657s] vendor/golang.org/x/net/http/httpproxy
+[  657s] google.golang.org/grpc/internal/syscall
+[  657s] google.golang.org/grpc/resolver/dns
+[  657s] google.golang.org/grpc/naming
+[  657s] google.golang.org/grpc/internal/binarylog
+[  657s] google.golang.org/grpc/stats
+[  657s] log/syslog
+[  657s] github.com/mitchellh/mapstructure
+[  657s] github.com/sirupsen/logrus/hooks/syslog
+[  657s] vendor/golang.org/x/net/http/httpguts
+[  657s] mime/multipart
+[  657s] golang.org/x/net/http/httpguts
+[  657s] gitee.com/openeuler/A-Tune/common/log
+[  657s] crypto/tls
+[  657s] net/http/httptrace
+[  657s] google.golang.org/grpc/credentials
+[  657s] github.com/go-xorm/xorm
+[  657s] net/http
+[  657s] google.golang.org/grpc/balancer
+[  657s] google.golang.org/grpc/peer
+[  657s] google.golang.org/grpc/internal/channelz
+[  657s] google.golang.org/grpc/balancer/base
+[  657s] google.golang.org/grpc/balancer/roundrobin
+[  657s] golang.org/x/net/trace
+[  657s] net/http/httputil
+[  657s] github.com/newm4n/grool/pkg
+[  657s] golang.org/x/net/http2
+[  657s] github.com/newm4n/grool/context
+[  657s] github.com/newm4n/grool/model
+[  657s] github.com/newm4n/grool/engine
+[  657s] github.com/newm4n/grool/antlr
+[  657s] github.com/newm4n/grool/builder
+[  657s] google.golang.org/grpc/internal/transport
+[  657s] google.golang.org/grpc
+[  657s] gitee.com/openeuler/A-Tune/api/profile
+[  657s] gitee.com/openeuler/A-Tune/common/utils
+[  657s] gitee.com/openeuler/A-Tune/common/config
+[  657s] gitee.com/openeuler/A-Tune/common/project
+[  657s] gitee.com/openeuler/A-Tune/common/cpumask
+[  657s] gitee.com/openeuler/A-Tune/common/topology
+[  657s] gitee.com/openeuler/A-Tune/common/http
+[  657s] gitee.com/openeuler/A-Tune/common/registry
+[  657s] gitee.com/openeuler/A-Tune/common/service
+[  657s] gitee.com/openeuler/A-Tune/common/client
+[  657s] gitee.com/openeuler/A-Tune/common/models
+[  657s] gitee.com/openeuler/A-Tune/common/schedule/framework
+[  657s] gitee.com/openeuler/A-Tune/common/sysload
+[  657s] gitee.com/openeuler/A-Tune/common/schedule/plugins/powersave
+[  657s] gitee.com/openeuler/A-Tune/common/system
+[  657s] gitee.com/openeuler/A-Tune/common/schedule/filters
+[  657s] gitee.com/openeuler/A-Tune/common/checker
+[  657s] gitee.com/openeuler/A-Tune/common/schedule/plugins/numaaware
+[  657s] gitee.com/openeuler/A-Tune/common/schedule/plugins
+[  657s] # github.com/mattn/go-sqlite3
+[  657s] sqlite3-binding.c: In function 'sqlite3SelectNew':
+[  657s] sqlite3-binding.c:125322:10: warning: function may return address of local variable [-Wreturn-local-addr]
+[  657s] 125322 |   return pNew;
+[  657s]        |          ^~~~
+[  657s] sqlite3-binding.c:125282:10: note: declared here
+[  657s] 125282 |   Select standin;
+[  657s]        |          ^~~~~~~
+[  657s] gitee.com/openeuler/A-Tune/common/sqlstore
+[  657s] gitee.com/openeuler/A-Tune/common/schedule
+[  657s] gitee.com/openeuler/A-Tune/common/profile
+[  657s] gitee.com/openeuler/A-Tune/common/tuning
+[  657s] command-line-arguments
+[  657s] + RPM_EC=0
+[  657s] ++ jobs -p
+[  657s] + exit 0
+[  657s] Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.T0pFO7
+[  657s] + umask 022
+[  657s] + cd /home/abuild/rpmbuild/BUILD
+[  657s] + '[' /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64 '!=' / ']'
+[  657s] + rm -rf /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64
+[  657s] ++ dirname /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64
+[  657s] + mkdir -p /home/abuild/rpmbuild/BUILDROOT
+[  657s] + mkdir /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64
+[  657s] + cd A-Tune-v1.0.0
+[  657s] + /usr/bin/make install DESTDIR=/home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64 'INSTALL=/usr/bin/install -p'
+[  657s] BEGIN INSTALL A-Tune...
+[  657s] mkdir -p /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/usr/bin
+[  657s] mkdir -p /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/usr/lib/systemd/system
+[  657s] rm -rf /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/
+[  657s] rm -rf /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/usr/lib/atuned/
+[  657s] rm -rf /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/usr/share/atuned/
+[  657s] rm -rf /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/usr/libexec/atuned/
+[  657s] rm -rf /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/var/lib/atuned/
+[  657s] rm -rf /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/var/run/atuned/
+[  657s] rm -rf /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/var/atuned/
+[  658s] mkdir -p /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/tuning
+[  658s] mkdir -p /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/rules
+[  658s] mkdir -p /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/training
+[  658s] mkdir -p /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/classification
+[  658s] mkdir -p /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/usr/lib/atuned/modules
+[  658s] mkdir -p /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/usr/lib/atuned/profiles
+[  658s] mkdir -p /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/usr/lib/atuned/training
+[  658s] mkdir -p /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/usr/share/atuned
+[  658s] mkdir -p /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/usr/libexec/atuned/analysis/models
+[  658s] mkdir -p /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/var/lib/atuned
+[  658s] mkdir -p /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/var/run/atuned
+[  658s] mkdir -p /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/var/atuned
+[  658s] mkdir -p /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/usr/share/bash-completion/completions
+[  658s] install -m 640 pkg/daemon_profile_server.so /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/usr/lib/atuned/modules
+[  658s] install -m 750 pkg/atune-adm /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/usr/bin
+[  658s] install -m 750 pkg/atuned /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/usr/bin
+[  658s] install -m 640 misc/atuned.service /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/usr/lib/systemd/system
+[  658s] install -m 640 misc/atuned.cnf /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/
+[  658s] install -m 640 misc/engine.cnf /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/
+[  658s] install -m 640 rules/tuning/tuning_rules.grl /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/rules
+[  658s] install -m 640 misc/atune-engine.service /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/usr/lib/systemd/system
+[  658s] install -m 640 database/atuned.db /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/var/lib/atuned/
+[  658s] install -m 640 misc/atune-adm /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/usr/share/bash-completion/completions/
+[  658s] \cp -rf analysis/* /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/usr/libexec/atuned/analysis/
+[  659s] chmod -R 750 /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/usr/libexec/atuned/analysis/
+[  659s] \cp -rf profiles/* /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/usr/lib/atuned/profiles/
+[  659s] chmod -R 750 /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/usr/lib/atuned/profiles/
+[  659s] END INSTALL A-Tune
+[  659s] cd /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/tools/ && python3 generate_models.py --model_path /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/usr/libexec/atuned/analysis/models 
+[  763s] the accuracy of random forest classifier is 1.000000
+[  763s] The overall classifier has been generated.
+[  763s] the accuracy of random forest classifier is 1.000000
+[  763s] The application classifiers have been generated.
+[  763s] the accuracy of svc classifier is 1.000000
+[  763s] The application classifiers have been generated.
+[  763s] BEGIN GENERATE REST CERTS...
+[  763s] mkdir -p /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/rest_certs
+[  763s] openssl genrsa -out /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/rest_certs/ca.key 2048
+[  763s] Generating RSA private key, 2048 bit long modulus (2 primes)
+[  763s] ............+++++
+[  763s] ........................................+++++
+[  763s] e is 65537 (0x010001)
+[  763s] openssl req -new -x509 -days 3650 -subj "/CN=ca" -key /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/rest_certs/ca.key -out /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/rest_certs/ca.crt
+[  763s] openssl genrsa -out /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/rest_certs/server.key 2048
+[  764s] Generating RSA private key, 2048 bit long modulus (2 primes)
+[  764s] .+++++
+[  764s] .........+++++
+[  764s] e is 65537 (0x010001)
+[  764s] cp /etc/pki/tls/openssl.cnf /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/rest_certs
+[  764s] openssl req -new -subj "/CN=localhost" -config /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/rest_certs/openssl.cnf \
+[  764s] 	-key /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/rest_certs/server.key -out /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/rest_certs/server.csr
+[  764s] openssl x509 -req -sha256 -CA /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/rest_certs/ca.crt -CAkey /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/rest_certs/ca.key -CAcreateserial -days 3650 \
+[  764s] 	-extfile /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/rest_certs/extfile.cnf -in /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/rest_certs/server.csr -out /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/rest_certs/server.crt
+[  764s] Signature ok
+[  764s] subject=CN = localhost
+[  764s] Getting CA Private Key
+[  764s] rm -rf /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/rest_certs/*.srl /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/rest_certs/*.csr /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/rest_certs/*.cnf
+[  764s] END GENERATE REST CERTS
+[  764s] BEGIN GENERATE ENGINE CERTS...
+[  764s] mkdir -p /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/engine_certs
+[  764s] Generating RSA private key, 2048 bit long modulus (2 primes)
+[  764s] ................................................+++++
+[  764s] ..........+++++
+[  764s] e is 65537 (0x010001)
+[  764s] cp /etc/pki/tls/openssl.cnf /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/engine_certs
+[  764s] Generating RSA private key, 2048 bit long modulus (2 primes)
+[  765s] ...................................................+++++
+[  765s] ....+++++
+[  765s] e is 65537 (0x010001)
+[  765s] Signature ok
+[  765s] subject=CN = localhost
+[  765s] Getting CA Private Key
+[  765s] Generating RSA private key, 2048 bit long modulus (2 primes)
+[  765s] .................+++++
+[  765s] ................................+++++
+[  765s] e is 65537 (0x010001)
+[  765s] Signature ok
+[  765s] subject=CN = localhost
+[  765s] Getting CA Private Key
+[  765s] rm -rf /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/engine_certs/*.srl /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/engine_certs/*.csr /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/engine_certs/*.cnf
+[  765s] END GENERATE ENGINE CERTS
+[  765s] \cp -rf tuning/yamls/* /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/tuning
+[  765s] chmod -R 750 /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/tuning
+[  765s] cd /home/abuild/rpmbuild/BUILD/A-Tune-v1.0.0/tools/ && python3 generate_tuning_file.py -d /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/etc/atuned/tuning
+[  775s] + /usr/lib/rpm/check-buildroot
+[  775s] + /usr/lib/rpm/brp-ldconfig
+[  776s] + /usr/lib/rpm/brp-compress
+[  776s] + /usr/lib/rpm/brp-strip /usr/bin/strip
+[  783s] + /usr/lib/rpm/brp-strip-comment-note /usr/bin/strip /usr/bin/objdump
+[  791s] + /usr/lib/rpm/brp-strip-static-archive /usr/bin/strip
+[  792s] + /usr/lib/rpm/brp-python-bytecompile /usr/bin/python 1 1
+[  793s] + /usr/lib/rpm/brp-python-hardlink
+[  793s] Executing(%check): /bin/sh -e /var/tmp/rpm-tmp.rXb46s
+[  793s] + umask 022
+[  793s] + cd /home/abuild/rpmbuild/BUILD
+[  793s] + cd A-Tune-v1.0.0
+[  793s] + RPM_EC=0
+[  793s] ++ jobs -p
+[  793s] + exit 0
+[  794s] Generating digest list: /usr/lib/rpm/brp-digest-list /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64
+[  794s] Processing files: atune-1.0.0-1.oe2.riscv64
+[  794s] Executing(%license): /bin/sh -e /var/tmp/rpm-tmp.mDWhp4
+[  794s] + umask 022
+[  794s] + cd /home/abuild/rpmbuild/BUILD
+[  794s] + cd A-Tune-v1.0.0
+[  794s] + LICENSEDIR=/home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/usr/share/licenses/atune
+[  794s] + export LC_ALL=C
+[  794s] + LC_ALL=C
+[  794s] + export LICENSEDIR
+[  794s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/usr/share/licenses/atune
+[  794s] + cp -pr License/LICENSE /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/usr/share/licenses/atune
+[  794s] + RPM_EC=0
+[  794s] ++ jobs -p
+[  794s] + exit 0
+[  795s] Generating digest list: /usr/lib/rpm/brp-digest-list /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64
+[  795s] /usr/lib/rpm/brp-digest-list: line 32: gen_digest_lists: command not found
+[  796s] Provides: atune = 1.0.0-1.oe2 atune(riscv-64) = 1.0.0-1.oe2
+[  796s] Requires(interp): /bin/sh /bin/sh /bin/sh
+[  796s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[  796s] Requires(post): /bin/sh
+[  796s] Requires(preun): /bin/sh
+[  796s] Requires(postun): /bin/sh
+[  796s] Requires: ld-linux-riscv64-lp64d.so.1()(64bit) ld-linux-riscv64-lp64d.so.1(GLIBC_2.27)(64bit) libc.so.6()(64bit) libc.so.6(GLIBC_2.27)(64bit) libc.so.6(GLIBC_2.28)(64bit) libc.so.6(GLIBC_2.32)(64bit) libc.so.6(GLIBC_2.33)(64bit) libc.so.6(GLIBC_2.34)(64bit) rtld(GNU_HASH)
+[  796s] Processing files: atune-client-1.0.0-1.oe2.riscv64
+[  797s] Generating digest list: /usr/lib/rpm/brp-digest-list /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64
+[  797s] /usr/lib/rpm/brp-digest-list: line 32: gen_digest_lists: command not found
+[  797s] Provides: atune-client = 1.0.0-1.oe2 atune-client(riscv-64) = 1.0.0-1.oe2
+[  797s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[  797s] Requires: ld-linux-riscv64-lp64d.so.1()(64bit) ld-linux-riscv64-lp64d.so.1(GLIBC_2.27)(64bit) libc.so.6()(64bit) libc.so.6(GLIBC_2.27)(64bit) libc.so.6(GLIBC_2.32)(64bit) libc.so.6(GLIBC_2.34)(64bit) rtld(GNU_HASH)
+[  797s] Processing files: atune-db-1.0.0-1.oe2.riscv64
+[  797s] Generating digest list: /usr/lib/rpm/brp-digest-list /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64
+[  797s] /usr/lib/rpm/brp-digest-list: line 32: gen_digest_lists: command not found
+[  797s] Provides: atune-db = 1.0.0-1.oe2 atune-db(riscv-64) = 1.0.0-1.oe2
+[  797s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[  797s] Processing files: atune-engine-1.0.0-1.oe2.riscv64
+[  797s] warning: Directory not found: /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/usr/libexec/atuned/analysis/plugin
+[  797s] Executing(%license): /bin/sh -e /var/tmp/rpm-tmp.wdM7gK
+[  797s] + umask 022
+[  797s] + cd /home/abuild/rpmbuild/BUILD
+[  797s] + cd A-Tune-v1.0.0
+[  797s] + LICENSEDIR=/home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/usr/share/licenses/atune-engine
+[  797s] + export LC_ALL=C
+[  797s] + LC_ALL=C
+[  797s] + export LICENSEDIR
+[  797s] + /usr/bin/mkdir -p /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/usr/share/licenses/atune-engine
+[  797s] + cp -pr License/LICENSE /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64/usr/share/licenses/atune-engine
+[  797s] + RPM_EC=0
+[  797s] ++ jobs -p
+[  797s] + exit 0
+[  799s] Generating digest list: /usr/lib/rpm/brp-digest-list /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64
+[  799s] /usr/lib/rpm/brp-digest-list: line 32: gen_digest_lists: command not found
+[  801s] Provides: atune-engine = 1.0.0-1.oe2 atune-engine(riscv-64) = 1.0.0-1.oe2
+[  801s] Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+[  801s] Conflicts: atune < 0.3-0.3
+[  801s] Checking for unpackaged file(s): /usr/lib/rpm/check-files /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64
+[  803s] Wrote: /home/abuild/rpmbuild/SRPMS/atune-1.0.0-1.oe2.src.rpm
+[  803s] Wrote: /home/abuild/rpmbuild/RPMS/riscv64/atune-db-1.0.0-1.oe2.riscv64.rpm
+[  808s] Wrote: /home/abuild/rpmbuild/RPMS/riscv64/atune-client-1.0.0-1.oe2.riscv64.rpm
+[  818s] Wrote: /home/abuild/rpmbuild/RPMS/riscv64/atune-1.0.0-1.oe2.riscv64.rpm
+[  830s] Wrote: /home/abuild/rpmbuild/RPMS/riscv64/atune-engine-1.0.0-1.oe2.riscv64.rpm
+[  830s] Executing(%clean): /bin/sh -e /var/tmp/rpm-tmp.2mJCmp
+[  830s] + umask 022
+[  830s] + cd /home/abuild/rpmbuild/BUILD
+[  830s] + cd A-Tune-v1.0.0
+[  830s] + /usr/bin/rm -rf /home/abuild/rpmbuild/BUILDROOT/atune-1.0.0-1.oe2.riscv64
+[  830s] + RPM_EC=0
+[  830s] ++ jobs -p
+[  830s] + exit 0
+[  830s] ... checking for files with abuild user/group
+[  831s] Warning: mkbaselibs missing in build root, skipping baselibs
+[  831s] 
+[  831s] oerv-obs-worker-08 finished "build atune.spec" at Mon May 23 07:04:22 UTC 2022.
+[  831s] 
