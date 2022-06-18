@@ -27,8 +27,7 @@ LDFLAGS="%{__global_ldflags} -lpthread -ldl"
 在修改到Clion不报错后，尝试编译，这次，编译成功且lldb能尝试启动lldb-server，但是无法完整地处理信息，lldb报错
 
 
-```
-Emmmer S, [6/14/22 12:51 AM]
+```log
 lldb             Processing command: r
 lldb             HandleCommand, cmd_obj : 'process launch'
 lldb             HandleCommand, (revised) command_string: 'process launch -c/bin/zsh --'
@@ -73,8 +72,6 @@ lldb             0x0000000000624728 Communication::Disconnect ()
 lldb             Process::SetPublicState (state = launching, restarted = 0)
 lldb             shlib dir -> /root/git/llvm-project/build/lib/
 lldb             HostInfo::ComputePathRelativeToLibrary() attempting to derive the path /bin relative to liblldb install path: /root/git/llvm-project/build/lib
-
-Emmmer S, [6/14/22 12:51 AM]
 lldb             HostInfo::ComputePathRelativeToLibrary() derived the path as: /root/git/llvm-project/build/bin
 lldb             support exe dir -> /root/git/llvm-project/build/bin/
 ait4(pid=3367)>  thread created
@@ -85,6 +82,9 @@ lldb             0x6438c0 ConnectionFileDescriptor::ConnectionFileDescriptor (fd
 lldb             0x6438c0 ConnectionFileDescriptor::CloseCommandPipe()
 lldb             0x6438c0 ConnectionFileDescriptor::OpenCommandPipe() - success readfd=8 writefd=9
 lldb             0x0000000000624C88 Communication::Disconnect ()
+```
+<details><pre>
+```log
 b-remote.async>  thread created
 b-remote.async>  this = 0x0000000000582F10, timeout = <infinite> for lldb.process.gdb-remote.async-listener
 lldb             0x0000000000624C88 Communication::Write (src = 0x0000003FFF90EF33, src_len = 1) connection = 0x00000000006438C0
@@ -116,8 +116,6 @@ lldb             this = 0x00000000006438C0, timeout = 5000000 us
 lldb             0x6438c0 ConnectionFileDescriptor::Read()  fd = 6, dst = 0x3fff90cc60, dst_len = 8192) => 6, error = (null)
 lldb             0x0000000000624C88 Communication::Write (src = 0x0000000000645880, src_len = 27) connection = 0x00000000006438C0
 lldb             0x6438c0 ConnectionFileDescriptor::Write (src = 0x645880, src_len = 27)
-
-Emmmer S, [6/14/22 12:51 AM]
 lldb             0x6438c0 ConnectionFileDescriptor::Write(fd = 6, src = 0x645880, src_len = 27) => 27 (error = (null))
 lldb             this = 0x0000000000624C88, dst = 0x0000003FFF90CC60, dst_len = 8192, timeout = 5000000 us, connection = 0x00000000006438C0
 lldb             this = 0x00000000006438C0, timeout = 5000000 us
@@ -154,8 +152,6 @@ lldb             this = 0x00000000006438C0, timeout = 5000000 us
 lldb             0x6438c0 ConnectionFileDescriptor::Read()  fd = 6, dst = 0x3fff90d0e0, dst_len = 8192) => 6, error = (null)
 lldb             0x0000000000624C88 Communication::Write (src = 0x0000000000644840, src_len = 35) connection = 0x00000000006438C0
 lldb             0x6438c0 ConnectionFileDescriptor::Write (src = 0x644840, src_len = 35)
-
-Emmmer S, [6/14/22 12:51 AM]
 lldb             0x6438c0 ConnectionFileDescriptor::Write(fd = 6, src = 0x644840, src_len = 35) => 35 (error = (null))
 lldb             this = 0x0000000000624C88, dst = 0x0000003FFF90D0E0, dst_len = 8192, timeout = 5000000 us, connection = 0x00000000006438C0
 lldb             this = 0x00000000006438C0, timeout = 5000000 us
@@ -192,8 +188,6 @@ lldb             this = 0x00000000006438C0, timeout = 5000000 us
 lldb             0x6438c0 ConnectionFileDescriptor::Read()  fd = 6, dst = 0x3fff90d070, dst_len = 8192) => 6, error = (null)
 lldb             0x0000000000624C88 Communication::Write (src = 0x00000000006460D0, src_len = 33) connection = 0x00000000006438C0
 lldb             0x6438c0 ConnectionFileDescriptor::Write (src = 0x6460d0, src_len = 33)
-
-Emmmer S, [6/14/22 12:51 AM]
 lldb             0x6438c0 ConnectionFileDescriptor::Write(fd = 6, src = 0x6460d0, src_len = 33) => 33 (error = (null))
 lldb             this = 0x0000000000624C88, dst = 0x0000003FFF90D070, dst_len = 8192, timeout = 5000000 us, connection = 0x00000000006438C0
 lldb             this = 0x00000000006438C0, timeout = 5000000 us
@@ -230,8 +224,6 @@ lldb             this = 0x00000000006438C0, timeout = 5000000 us
 lldb             0x6438c0 ConnectionFileDescriptor::Read()  fd = 6, dst = 0x3fff90d070, dst_len = 8192) => 6, error = (null)
 lldb             0x0000000000624C88 Communication::Write (src = 0x0000000000645D50, src_len = 53) connection = 0x00000000006438C0
 lldb             0x6438c0 ConnectionFileDescriptor::Write (src = 0x645d50, src_len = 53)
-
-Emmmer S, [6/14/22 12:51 AM]
 lldb             0x6438c0 ConnectionFileDescriptor::Write(fd = 6, src = 0x645d50, src_len = 53) => 53 (error = (null))
 lldb             this = 0x0000000000624C88, dst = 0x0000003FFF90D070, dst_len = 8192, timeout = 5000000 us, connection = 0x00000000006438C0
 lldb             this = 0x00000000006438C0, timeout = 5000000 us
@@ -268,8 +260,6 @@ lldb             this = 0x00000000006438C0, timeout = 5000000 us
 lldb             0x6438c0 ConnectionFileDescriptor::Read()  fd = 6, dst = 0x3fff90d070, dst_len = 8192) => 6, error = (null)
 lldb             0x0000000000624C88 Communication::Write (src = 0x00000000006460D0, src_len = 35) connection = 0x00000000006438C0
 lldb             0x6438c0 ConnectionFileDescriptor::Write (src = 0x6460d0, src_len = 35)
-
-Emmmer S, [6/14/22 12:51 AM]
 lldb             0x6438c0 ConnectionFileDescriptor::Write(fd = 6, src = 0x6460d0, src_len = 35) => 35 (error = (null))
 lldb             this = 0x0000000000624C88, dst = 0x0000003FFF90D070, dst_len = 8192, timeout = 5000000 us, connection = 0x00000000006438C0
 lldb             this = 0x00000000006438C0, timeout = 5000000 us
@@ -306,8 +296,6 @@ lldb             this = 0x00000000006438C0, timeout = 5000000 us
 lldb             0x6438c0 ConnectionFileDescriptor::Read()  fd = 6, dst = 0x3fff90d070, dst_len = 8192) => 6, error = (null)
 lldb             0x0000000000624C88 Communication::Write (src = 0x00000000006460D0, src_len = 31) connection = 0x00000000006438C0
 lldb             0x6438c0 ConnectionFileDescriptor::Write (src = 0x6460d0, src_len = 31)
-
-Emmmer S, [6/14/22 12:51 AM]
 lldb             0x6438c0 ConnectionFileDescriptor::Write(fd = 6, src = 0x6460d0, src_len = 31) => 31 (error = (null))
 lldb             this = 0x0000000000624C88, dst = 0x0000003FFF90D070, dst_len = 8192, timeout = 5000000 us, connection = 0x00000000006438C0
 lldb             this = 0x00000000006438C0, timeout = 5000000 us
@@ -335,6 +323,10 @@ lldb             0x6438c0 ConnectionFileDescriptor::Write (src = 0x6439c0, src_l
 lldb             0x6438c0 ConnectionFileDescriptor::Write(fd = 6, src = 0x6439c0, src_len = 58) => 58 (error = (null))
 lldb             this = 0x0000000000624C88, dst = 0x0000003FFF90D070, dst_len = 8192, timeout = 5000000 us, connection = 0x00000000006438C0
 lldb             this = 0x00000000006438C0, timeout = 5000000 us
+```
+</pre></details>
+
+```log
 lldb             0x6438c0 ConnectionFileDescriptor::Read()  fd = 6, dst = 0x3fff90d070, dst_len = 8192) => 6, error = (null)
 lldb             0x0000000000624C88 Communication::Write (src = 0x0000000000642450, src_len = 29) connection = 0x00000000006438C0
 lldb             0x6438c0 ConnectionFileDescriptor::Write (src = 0x642450, src_len = 29)
@@ -344,8 +336,6 @@ lldb             this = 0x00000000006438C0, timeout = 10000000 us
 lldb             0x0000000000624C88 Communication::Write (src = 0x0000003FFF90CE38, src_len = 6) connection = 0x00000000006438C0
 lldb             0x6438c0 ConnectionFileDescriptor::Write (src = 0x3fff90ce38, src_len = 6)
 lldb             0x6438c0 ConnectionFileDescriptor::Write(fd = 6, src = 0x3fff90ce38, src_len = 6) => 6 (error = (null))
-
-Emmmer S, [6/14/22 12:51 AM]
 lldb             this = 0x0000000000624C88, dst = 0x0000003FFF90ADE0, dst_len = 8192, timeout = 10000000 us, connection = 0x00000000006438C0
 lldb             this = 0x00000000006438C0, timeout = 10000000 us
 lldb             this = 0x0000000000624C88, dst = 0x0000003FFF90ADE0, dst_len = 8192, timeout = 10000000 us, connection = 0x00000000006438C0
@@ -365,7 +355,11 @@ lldb             0x6414e0 Listener::Clear('LaunchEventHijack')
 lldb             0x6414e0 Listener::~Listener('LaunchEventHijack')
 lldb             'A' packet returned an error: -1
 lldb             HandleCommand, command did not succeed
+```
+```log
 error: 'A' packet returned an error: -1
+```
+```log
 (lldb) lldb             this = 0x0000000000582C48, timeout = <infinite>
 ait4(pid=3367)>  Process::SetExitStatus (status=-1 (0xffffffff), description="debugserver died with signal SIGABRT")
 ait4(pid=3367)>  Process::SetPrivateState (exited)
